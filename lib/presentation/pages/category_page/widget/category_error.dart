@@ -1,7 +1,7 @@
 part of '../category_page.dart';
 
 class CategoryError extends StatelessWidget {
-  const CategoryError({Key? key}) : super(key: key);
+  const CategoryError({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class CategoryError extends StatelessWidget {
           const SizedBox(height: 24),
           TextButton(
             onPressed: context.read<CategoryCubit>().getCategories,
-            child: Text(
+            child: const Text(
               'TRY AGAIN',
               style: ThemeText.button,
             ),

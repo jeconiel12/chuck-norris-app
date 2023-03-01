@@ -1,11 +1,12 @@
 part of '../joke_page.dart';
 
 class JokeErrorMessage extends StatelessWidget {
-  final String message;
   const JokeErrorMessage({
-    Key? key,
     required this.message,
-  }) : super(key: key);
+    super.key,
+  });
+
+  final String message;
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'joke_dto.dart';
 
@@ -12,22 +12,7 @@ part of 'joke_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$JokeDtoTearOff {
-  const _$JokeDtoTearOff();
-
-  _JokeDto call({required String id, required String value}) {
-    return _JokeDto(
-      id: id,
-      value: value,
-    );
-  }
-}
-
-/// @nodoc
-const $JokeDto = _$JokeDtoTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$JokeDto {
@@ -41,64 +26,69 @@ mixin _$JokeDto {
 /// @nodoc
 abstract class $JokeDtoCopyWith<$Res> {
   factory $JokeDtoCopyWith(JokeDto value, $Res Function(JokeDto) then) =
-      _$JokeDtoCopyWithImpl<$Res>;
+      _$JokeDtoCopyWithImpl<$Res, JokeDto>;
+  @useResult
   $Res call({String id, String value});
 }
 
 /// @nodoc
-class _$JokeDtoCopyWithImpl<$Res> implements $JokeDtoCopyWith<$Res> {
+class _$JokeDtoCopyWithImpl<$Res, $Val extends JokeDto>
+    implements $JokeDtoCopyWith<$Res> {
   _$JokeDtoCopyWithImpl(this._value, this._then);
 
-  final JokeDto _value;
   // ignore: unused_field
-  final $Res Function(JokeDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? value = freezed,
+    Object? id = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$JokeDtoCopyWith<$Res> implements $JokeDtoCopyWith<$Res> {
-  factory _$JokeDtoCopyWith(_JokeDto value, $Res Function(_JokeDto) then) =
-      __$JokeDtoCopyWithImpl<$Res>;
+abstract class _$$_JokeDtoCopyWith<$Res> implements $JokeDtoCopyWith<$Res> {
+  factory _$$_JokeDtoCopyWith(
+          _$_JokeDto value, $Res Function(_$_JokeDto) then) =
+      __$$_JokeDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, String value});
 }
 
 /// @nodoc
-class __$JokeDtoCopyWithImpl<$Res> extends _$JokeDtoCopyWithImpl<$Res>
-    implements _$JokeDtoCopyWith<$Res> {
-  __$JokeDtoCopyWithImpl(_JokeDto _value, $Res Function(_JokeDto) _then)
-      : super(_value, (v) => _then(v as _JokeDto));
+class __$$_JokeDtoCopyWithImpl<$Res>
+    extends _$JokeDtoCopyWithImpl<$Res, _$_JokeDto>
+    implements _$$_JokeDtoCopyWith<$Res> {
+  __$$_JokeDtoCopyWithImpl(_$_JokeDto _value, $Res Function(_$_JokeDto) _then)
+      : super(_value, _then);
 
-  @override
-  _JokeDto get _value => super._value as _JokeDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? value = freezed,
+    Object? id = null,
+    Object? value = null,
   }) {
-    return _then(_JokeDto(
-      id: id == freezed
+    return _then(_$_JokeDto(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
@@ -125,25 +115,24 @@ class _$_JokeDto extends _JokeDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _JokeDto &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.value, value));
+            other is _$_JokeDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(runtimeType, id, value);
 
   @JsonKey(ignore: true)
   @override
-  _$JokeDtoCopyWith<_JokeDto> get copyWith =>
-      __$JokeDtoCopyWithImpl<_JokeDto>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_JokeDtoCopyWith<_$_JokeDto> get copyWith =>
+      __$$_JokeDtoCopyWithImpl<_$_JokeDto>(this, _$identity);
 }
 
 abstract class _JokeDto extends JokeDto {
-  factory _JokeDto({required String id, required String value}) = _$_JokeDto;
+  factory _JokeDto({required final String id, required final String value}) =
+      _$_JokeDto;
   _JokeDto._() : super._();
 
   @override
@@ -152,6 +141,6 @@ abstract class _JokeDto extends JokeDto {
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$JokeDtoCopyWith<_JokeDto> get copyWith =>
+  _$$_JokeDtoCopyWith<_$_JokeDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

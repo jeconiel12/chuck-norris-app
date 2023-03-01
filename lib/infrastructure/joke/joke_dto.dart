@@ -1,22 +1,23 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:chuck_norris_joke/domain/joke/joke_model.dart';
 import 'package:chuck_norris_joke/infrastructure/joke/joke_table.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'joke_dto.freezed.dart';
 
 @freezed
 class JokeDto with _$JokeDto {
-  const JokeDto._();
-
   factory JokeDto({
     required String id,
     required String value,
   }) = _JokeDto;
 
+  const JokeDto._();
+
   factory JokeDto.fromJson(Map<String, dynamic> data) {
     return JokeDto(
-      id: data['id'],
-      value: data['value'],
+      id: data['id'] as String,
+      value: data['value'] as String,
     );
   }
   factory JokeDto.fromDomain(JokeModel model) {

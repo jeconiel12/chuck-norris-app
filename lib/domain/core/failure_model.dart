@@ -1,6 +1,5 @@
-// Package imports:
-
 import 'package:flutter/foundation.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'failure_model.freezed.dart';

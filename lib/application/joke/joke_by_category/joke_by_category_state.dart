@@ -2,13 +2,13 @@ part of 'joke_by_category_cubit.dart';
 
 @freezed
 class JokeByCategoryState with _$JokeByCategoryState {
-  const JokeByCategoryState._();
-
   const factory JokeByCategoryState({
     required JokeModel joke,
     required bool isLoading,
     required Option<FailureModel> failureOption,
   }) = _JokeByCategoryState;
+
+  const JokeByCategoryState._();
 
   factory JokeByCategoryState.initial() {
     return JokeByCategoryState(

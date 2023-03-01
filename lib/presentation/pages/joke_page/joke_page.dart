@@ -1,3 +1,9 @@
+import 'package:flutter/material.dart';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:chuck_norris_joke/application/color/color_cubit.dart';
 import 'package:chuck_norris_joke/application/joke/favorite/favorite_cubit.dart';
 import 'package:chuck_norris_joke/application/joke/joke_by_category/joke_by_category_cubit.dart';
@@ -10,11 +16,6 @@ import 'package:chuck_norris_joke/get_it.dart';
 import 'package:chuck_norris_joke/presentation/helper/share_screenshot.dart';
 import 'package:chuck_norris_joke/presentation/pages/category_page/category_page.dart';
 import 'package:chuck_norris_joke/presentation/theme/theme.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 part 'widgets/button_color.dart';
 part 'widgets/button_delete.dart';
@@ -32,9 +33,7 @@ part 'joke_by_category.dart';
 part 'joke_favorites.dart';
 
 class JokePage extends StatefulWidget {
-  const JokePage({
-    Key? key,
-  }) : super(key: key);
+  const JokePage({super.key});
 
   @override
   State<JokePage> createState() => _JokePageState();

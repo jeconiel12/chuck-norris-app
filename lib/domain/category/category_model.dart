@@ -4,11 +4,11 @@ part 'category_model.freezed.dart';
 
 @freezed
 class CategoryModel with _$CategoryModel {
-  const CategoryModel._();
-
   factory CategoryModel({
     required String value,
   }) = _CategoryModel;
+
+  const CategoryModel._();
 
   factory CategoryModel.empty() {
     return CategoryModel(value: '');

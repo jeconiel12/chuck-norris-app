@@ -2,8 +2,8 @@ part of '../joke_page.dart';
 
 class ButtonColor extends StatelessWidget {
   const ButtonColor({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class ButtonColor extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(24, 48, 24, 24),
       child: GestureDetector(
         onTap: () {
-          showDialog(
+          showDialog<void>(
             context: context,
             builder: (_) => BlocProvider.value(
               value: BlocProvider.of<ColorCubit>(context),
@@ -30,7 +30,7 @@ class ButtonColor extends StatelessWidget {
 }
 
 class _ColorDialog extends StatelessWidget {
-  const _ColorDialog({Key? key}) : super(key: key);
+  const _ColorDialog();
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,6 @@ class _ColorDialog extends StatelessWidget {
             ),
             const SizedBox(height: 32),
             Wrap(
-              // Min width of dialog 280 =  32 (padding) * 2 + 50 (option) * 3 + 32.25 * 2 (spacing)
               spacing: 32.25,
               runSpacing: 32.25,
               children: const [
@@ -85,12 +84,10 @@ class _ColorDialog extends StatelessWidget {
 }
 
 class _ColorOption extends StatelessWidget {
-  final Color color;
-
   const _ColorOption({
-    Key? key,
     required this.color,
-  }) : super(key: key);
+  });
+  final Color color;
 
   @override
   Widget build(BuildContext context) {

@@ -1,11 +1,12 @@
 part of 'joke_page.dart';
 
 class JokeByCategory extends StatefulWidget {
-  final CategoryModel category;
   const JokeByCategory({
-    Key? key,
     required this.category,
-  }) : super(key: key);
+    super.key,
+  });
+
+  final CategoryModel category;
 
   @override
   State<JokeByCategory> createState() => _JokeByCategoryState();
@@ -17,7 +18,6 @@ class _JokeByCategoryState extends State<JokeByCategory> {
   @override
   void initState() {
     super.initState();
-    _jokeByCategoryCubit;
     _jokeByCategoryCubit.getJokeByCategory(widget.category);
   }
 
@@ -40,7 +40,8 @@ class _JokeByCategoryState extends State<JokeByCategory> {
       child: Stack(
         children: [
           JokeRefreshIndicator(
-            onRefresh: () => _jokeByCategoryCubit.getJokeByCategory(widget.category),
+            onRefresh: () =>
+                _jokeByCategoryCubit.getJokeByCategory(widget.category),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,14 +49,17 @@ class _JokeByCategoryState extends State<JokeByCategory> {
               BlocBuilder<JokeByCategoryCubit, JokeByCategoryState>(
                 buildWhen: (p, c) => p.showColorButton != c.showColorButton,
                 builder: (context, state) {
-                  return state.showColorButton ? const ButtonColor() : const SizedBox.shrink();
+                  return state.showColorButton
+                      ? const ButtonColor()
+                      : const SizedBox.shrink();
                 },
               ),
               Expanded(
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.all(24),
-                    child: BlocBuilder<JokeByCategoryCubit, JokeByCategoryState>(
+                    child:
+                        BlocBuilder<JokeByCategoryCubit, JokeByCategoryState>(
                       buildWhen: (p, c) => p != c,
                       builder: (context, state) {
                         return _buildChild(state);
@@ -69,7 +73,8 @@ class _JokeByCategoryState extends State<JokeByCategory> {
                 child: Row(
                   children: [
                     BlocBuilder<JokeByCategoryCubit, JokeByCategoryState>(
-                      buildWhen: (p, c) => p.showFilterButton != c.showFilterButton,
+                      buildWhen: (p, c) =>
+                          p.showFilterButton != c.showFilterButton,
                       builder: (context, state) {
                         return state.showFilterButton
                             ? const ButtonFilter()
@@ -78,7 +83,8 @@ class _JokeByCategoryState extends State<JokeByCategory> {
                     ),
                     const Spacer(),
                     BlocBuilder<JokeByCategoryCubit, JokeByCategoryState>(
-                      buildWhen: (p, c) => p.showShareButton != c.showShareButton,
+                      buildWhen: (p, c) =>
+                          p.showShareButton != c.showShareButton,
                       builder: (context, state) {
                         return state.showShareButton
                             ? ButtonShare(value: state.joke.value)
@@ -87,7 +93,8 @@ class _JokeByCategoryState extends State<JokeByCategory> {
                     ),
                     const SizedBox(width: 16),
                     BlocBuilder<JokeByCategoryCubit, JokeByCategoryState>(
-                      buildWhen: (p, c) => p.showFavoriteButton != c.showFavoriteButton,
+                      buildWhen: (p, c) =>
+                          p.showFavoriteButton != c.showFavoriteButton,
                       builder: (context, state) {
                         return state.showFavoriteButton
                             ? ButtonFavorite(joke: state.joke)

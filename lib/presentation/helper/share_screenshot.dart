@@ -1,7 +1,7 @@
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
@@ -13,9 +13,11 @@ mixin ShareScreenshot {
     const fileName = 'screenshot.png';
     final directory = (await getApplicationDocumentsDirectory()).path;
     final file = await File('$directory/$fileName').create();
-    Uint8List capturedWidget = await _screenshotController.captureFromWidget(widget);
+    final capturedWidget =
+        await _screenshotController.captureFromWidget(widget);
     file.writeAsBytesSync(capturedWidget);
+    // ignore: deprecated_member_use
     await Share.shareFiles([file.path]);
-    file.delete();
+    await file.delete();
   }
 }

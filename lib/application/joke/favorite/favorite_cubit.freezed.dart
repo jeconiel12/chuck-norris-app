@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'favorite_cubit.dart';
 
@@ -12,22 +12,7 @@ part of 'favorite_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FavoriteStateTearOff {
-  const _$FavoriteStateTearOff();
-
-  _FavoriteState call({required bool isJokeFavorite, required bool isError}) {
-    return _FavoriteState(
-      isJokeFavorite: isJokeFavorite,
-      isError: isError,
-    );
-  }
-}
-
-/// @nodoc
-const $FavoriteState = _$FavoriteStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$FavoriteState {
@@ -43,69 +28,71 @@ mixin _$FavoriteState {
 abstract class $FavoriteStateCopyWith<$Res> {
   factory $FavoriteStateCopyWith(
           FavoriteState value, $Res Function(FavoriteState) then) =
-      _$FavoriteStateCopyWithImpl<$Res>;
+      _$FavoriteStateCopyWithImpl<$Res, FavoriteState>;
+  @useResult
   $Res call({bool isJokeFavorite, bool isError});
 }
 
 /// @nodoc
-class _$FavoriteStateCopyWithImpl<$Res>
+class _$FavoriteStateCopyWithImpl<$Res, $Val extends FavoriteState>
     implements $FavoriteStateCopyWith<$Res> {
   _$FavoriteStateCopyWithImpl(this._value, this._then);
 
-  final FavoriteState _value;
   // ignore: unused_field
-  final $Res Function(FavoriteState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isJokeFavorite = freezed,
-    Object? isError = freezed,
+    Object? isJokeFavorite = null,
+    Object? isError = null,
   }) {
     return _then(_value.copyWith(
-      isJokeFavorite: isJokeFavorite == freezed
+      isJokeFavorite: null == isJokeFavorite
           ? _value.isJokeFavorite
           : isJokeFavorite // ignore: cast_nullable_to_non_nullable
               as bool,
-      isError: isError == freezed
+      isError: null == isError
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$FavoriteStateCopyWith<$Res>
+abstract class _$$_FavoriteStateCopyWith<$Res>
     implements $FavoriteStateCopyWith<$Res> {
-  factory _$FavoriteStateCopyWith(
-          _FavoriteState value, $Res Function(_FavoriteState) then) =
-      __$FavoriteStateCopyWithImpl<$Res>;
+  factory _$$_FavoriteStateCopyWith(
+          _$_FavoriteState value, $Res Function(_$_FavoriteState) then) =
+      __$$_FavoriteStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool isJokeFavorite, bool isError});
 }
 
 /// @nodoc
-class __$FavoriteStateCopyWithImpl<$Res>
-    extends _$FavoriteStateCopyWithImpl<$Res>
-    implements _$FavoriteStateCopyWith<$Res> {
-  __$FavoriteStateCopyWithImpl(
-      _FavoriteState _value, $Res Function(_FavoriteState) _then)
-      : super(_value, (v) => _then(v as _FavoriteState));
+class __$$_FavoriteStateCopyWithImpl<$Res>
+    extends _$FavoriteStateCopyWithImpl<$Res, _$_FavoriteState>
+    implements _$$_FavoriteStateCopyWith<$Res> {
+  __$$_FavoriteStateCopyWithImpl(
+      _$_FavoriteState _value, $Res Function(_$_FavoriteState) _then)
+      : super(_value, _then);
 
-  @override
-  _FavoriteState get _value => super._value as _FavoriteState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isJokeFavorite = freezed,
-    Object? isError = freezed,
+    Object? isJokeFavorite = null,
+    Object? isError = null,
   }) {
-    return _then(_FavoriteState(
-      isJokeFavorite: isJokeFavorite == freezed
+    return _then(_$_FavoriteState(
+      isJokeFavorite: null == isJokeFavorite
           ? _value.isJokeFavorite
           : isJokeFavorite // ignore: cast_nullable_to_non_nullable
               as bool,
-      isError: isError == freezed
+      isError: null == isError
           ? _value.isError
           : isError // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -142,27 +129,26 @@ class _$_FavoriteState extends _FavoriteState with DiagnosticableTreeMixin {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FavoriteState &&
-            const DeepCollectionEquality()
-                .equals(other.isJokeFavorite, isJokeFavorite) &&
-            const DeepCollectionEquality().equals(other.isError, isError));
+            other is _$_FavoriteState &&
+            (identical(other.isJokeFavorite, isJokeFavorite) ||
+                other.isJokeFavorite == isJokeFavorite) &&
+            (identical(other.isError, isError) || other.isError == isError));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(isJokeFavorite),
-      const DeepCollectionEquality().hash(isError));
+  int get hashCode => Object.hash(runtimeType, isJokeFavorite, isError);
 
   @JsonKey(ignore: true)
   @override
-  _$FavoriteStateCopyWith<_FavoriteState> get copyWith =>
-      __$FavoriteStateCopyWithImpl<_FavoriteState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_FavoriteStateCopyWith<_$_FavoriteState> get copyWith =>
+      __$$_FavoriteStateCopyWithImpl<_$_FavoriteState>(this, _$identity);
 }
 
 abstract class _FavoriteState extends FavoriteState {
   const factory _FavoriteState(
-      {required bool isJokeFavorite, required bool isError}) = _$_FavoriteState;
+      {required final bool isJokeFavorite,
+      required final bool isError}) = _$_FavoriteState;
   const _FavoriteState._() : super._();
 
   @override
@@ -171,6 +157,6 @@ abstract class _FavoriteState extends FavoriteState {
   bool get isError;
   @override
   @JsonKey(ignore: true)
-  _$FavoriteStateCopyWith<_FavoriteState> get copyWith =>
+  _$$_FavoriteStateCopyWith<_$_FavoriteState> get copyWith =>
       throw _privateConstructorUsedError;
 }

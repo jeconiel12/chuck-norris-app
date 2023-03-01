@@ -15,7 +15,7 @@ part 'widget/category_header.dart';
 part 'widget/category_loading.dart';
 
 class CategoryPage extends StatefulWidget {
-  const CategoryPage({Key? key}) : super(key: key);
+  const CategoryPage({super.key});
 
   @override
   State<CategoryPage> createState() => _CategoryPageState();

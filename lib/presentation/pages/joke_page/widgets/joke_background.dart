@@ -2,8 +2,8 @@ part of '../joke_page.dart';
 
 class JokeBackground extends StatelessWidget {
   const JokeBackground({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

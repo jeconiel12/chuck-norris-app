@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'joke_cubit.dart';
 
@@ -12,29 +12,7 @@ part of 'joke_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$JokeStateTearOff {
-  const _$JokeStateTearOff();
-
-  _Random random() {
-    return const _Random();
-  }
-
-  _Category category({required CategoryModel category}) {
-    return _Category(
-      category: category,
-    );
-  }
-
-  _Favorite favorite() {
-    return const _Favorite();
-  }
-}
-
-/// @nodoc
-const $JokeState = _$JokeStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$JokeState {
@@ -47,9 +25,9 @@ mixin _$JokeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? random,
-    TResult Function(CategoryModel category)? category,
-    TResult Function()? favorite,
+    TResult? Function()? random,
+    TResult? Function(CategoryModel category)? category,
+    TResult? Function()? favorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,9 +47,9 @@ mixin _$JokeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Random value)? random,
-    TResult Function(_Category value)? category,
-    TResult Function(_Favorite value)? favorite,
+    TResult? Function(_Random value)? random,
+    TResult? Function(_Category value)? category,
+    TResult? Function(_Favorite value)? favorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,32 +65,32 @@ mixin _$JokeState {
 /// @nodoc
 abstract class $JokeStateCopyWith<$Res> {
   factory $JokeStateCopyWith(JokeState value, $Res Function(JokeState) then) =
-      _$JokeStateCopyWithImpl<$Res>;
+      _$JokeStateCopyWithImpl<$Res, JokeState>;
 }
 
 /// @nodoc
-class _$JokeStateCopyWithImpl<$Res> implements $JokeStateCopyWith<$Res> {
+class _$JokeStateCopyWithImpl<$Res, $Val extends JokeState>
+    implements $JokeStateCopyWith<$Res> {
   _$JokeStateCopyWithImpl(this._value, this._then);
 
-  final JokeState _value;
   // ignore: unused_field
-  final $Res Function(JokeState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$RandomCopyWith<$Res> {
-  factory _$RandomCopyWith(_Random value, $Res Function(_Random) then) =
-      __$RandomCopyWithImpl<$Res>;
+abstract class _$$_RandomCopyWith<$Res> {
+  factory _$$_RandomCopyWith(_$_Random value, $Res Function(_$_Random) then) =
+      __$$_RandomCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$RandomCopyWithImpl<$Res> extends _$JokeStateCopyWithImpl<$Res>
-    implements _$RandomCopyWith<$Res> {
-  __$RandomCopyWithImpl(_Random _value, $Res Function(_Random) _then)
-      : super(_value, (v) => _then(v as _Random));
-
-  @override
-  _Random get _value => super._value as _Random;
+class __$$_RandomCopyWithImpl<$Res>
+    extends _$JokeStateCopyWithImpl<$Res, _$_Random>
+    implements _$$_RandomCopyWith<$Res> {
+  __$$_RandomCopyWithImpl(_$_Random _value, $Res Function(_$_Random) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -128,7 +106,7 @@ class _$_Random extends _Random {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Random);
+        (other.runtimeType == runtimeType && other is _$_Random);
   }
 
   @override
@@ -147,9 +125,9 @@ class _$_Random extends _Random {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? random,
-    TResult Function(CategoryModel category)? category,
-    TResult Function()? favorite,
+    TResult? Function()? random,
+    TResult? Function(CategoryModel category)? category,
+    TResult? Function()? favorite,
   }) {
     return random?.call();
   }
@@ -181,9 +159,9 @@ class _$_Random extends _Random {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Random value)? random,
-    TResult Function(_Category value)? category,
-    TResult Function(_Favorite value)? favorite,
+    TResult? Function(_Random value)? random,
+    TResult? Function(_Category value)? category,
+    TResult? Function(_Favorite value)? favorite,
   }) {
     return random?.call(this);
   }
@@ -209,29 +187,31 @@ abstract class _Random extends JokeState {
 }
 
 /// @nodoc
-abstract class _$CategoryCopyWith<$Res> {
-  factory _$CategoryCopyWith(_Category value, $Res Function(_Category) then) =
-      __$CategoryCopyWithImpl<$Res>;
+abstract class _$$_CategoryCopyWith<$Res> {
+  factory _$$_CategoryCopyWith(
+          _$_Category value, $Res Function(_$_Category) then) =
+      __$$_CategoryCopyWithImpl<$Res>;
+  @useResult
   $Res call({CategoryModel category});
 
   $CategoryModelCopyWith<$Res> get category;
 }
 
 /// @nodoc
-class __$CategoryCopyWithImpl<$Res> extends _$JokeStateCopyWithImpl<$Res>
-    implements _$CategoryCopyWith<$Res> {
-  __$CategoryCopyWithImpl(_Category _value, $Res Function(_Category) _then)
-      : super(_value, (v) => _then(v as _Category));
+class __$$_CategoryCopyWithImpl<$Res>
+    extends _$JokeStateCopyWithImpl<$Res, _$_Category>
+    implements _$$_CategoryCopyWith<$Res> {
+  __$$_CategoryCopyWithImpl(
+      _$_Category _value, $Res Function(_$_Category) _then)
+      : super(_value, _then);
 
-  @override
-  _Category get _value => super._value as _Category;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? category = freezed,
+    Object? category = null,
   }) {
-    return _then(_Category(
-      category: category == freezed
+    return _then(_$_Category(
+      category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CategoryModel,
@@ -239,6 +219,7 @@ class __$CategoryCopyWithImpl<$Res> extends _$JokeStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CategoryModelCopyWith<$Res> get category {
     return $CategoryModelCopyWith<$Res>(_value.category, (value) {
       return _then(_value.copyWith(category: value));
@@ -263,18 +244,19 @@ class _$_Category extends _Category {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Category &&
-            const DeepCollectionEquality().equals(other.category, category));
+            other is _$_Category &&
+            (identical(other.category, category) ||
+                other.category == category));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(category));
+  int get hashCode => Object.hash(runtimeType, category);
 
   @JsonKey(ignore: true)
   @override
-  _$CategoryCopyWith<_Category> get copyWith =>
-      __$CategoryCopyWithImpl<_Category>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CategoryCopyWith<_$_Category> get copyWith =>
+      __$$_CategoryCopyWithImpl<_$_Category>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -289,9 +271,9 @@ class _$_Category extends _Category {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? random,
-    TResult Function(CategoryModel category)? category,
-    TResult Function()? favorite,
+    TResult? Function()? random,
+    TResult? Function(CategoryModel category)? category,
+    TResult? Function()? favorite,
   }) {
     return category?.call(this.category);
   }
@@ -323,9 +305,9 @@ class _$_Category extends _Category {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Random value)? random,
-    TResult Function(_Category value)? category,
-    TResult Function(_Favorite value)? favorite,
+    TResult? Function(_Random value)? random,
+    TResult? Function(_Category value)? category,
+    TResult? Function(_Favorite value)? favorite,
   }) {
     return category?.call(this);
   }
@@ -346,29 +328,30 @@ class _$_Category extends _Category {
 }
 
 abstract class _Category extends JokeState {
-  const factory _Category({required CategoryModel category}) = _$_Category;
+  const factory _Category({required final CategoryModel category}) =
+      _$_Category;
   const _Category._() : super._();
 
   CategoryModel get category;
   @JsonKey(ignore: true)
-  _$CategoryCopyWith<_Category> get copyWith =>
+  _$$_CategoryCopyWith<_$_Category> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FavoriteCopyWith<$Res> {
-  factory _$FavoriteCopyWith(_Favorite value, $Res Function(_Favorite) then) =
-      __$FavoriteCopyWithImpl<$Res>;
+abstract class _$$_FavoriteCopyWith<$Res> {
+  factory _$$_FavoriteCopyWith(
+          _$_Favorite value, $Res Function(_$_Favorite) then) =
+      __$$_FavoriteCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FavoriteCopyWithImpl<$Res> extends _$JokeStateCopyWithImpl<$Res>
-    implements _$FavoriteCopyWith<$Res> {
-  __$FavoriteCopyWithImpl(_Favorite _value, $Res Function(_Favorite) _then)
-      : super(_value, (v) => _then(v as _Favorite));
-
-  @override
-  _Favorite get _value => super._value as _Favorite;
+class __$$_FavoriteCopyWithImpl<$Res>
+    extends _$JokeStateCopyWithImpl<$Res, _$_Favorite>
+    implements _$$_FavoriteCopyWith<$Res> {
+  __$$_FavoriteCopyWithImpl(
+      _$_Favorite _value, $Res Function(_$_Favorite) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -384,7 +367,7 @@ class _$_Favorite extends _Favorite {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Favorite);
+        (other.runtimeType == runtimeType && other is _$_Favorite);
   }
 
   @override
@@ -403,9 +386,9 @@ class _$_Favorite extends _Favorite {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? random,
-    TResult Function(CategoryModel category)? category,
-    TResult Function()? favorite,
+    TResult? Function()? random,
+    TResult? Function(CategoryModel category)? category,
+    TResult? Function()? favorite,
   }) {
     return favorite?.call();
   }
@@ -437,9 +420,9 @@ class _$_Favorite extends _Favorite {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Random value)? random,
-    TResult Function(_Category value)? category,
-    TResult Function(_Favorite value)? favorite,
+    TResult? Function(_Random value)? random,
+    TResult? Function(_Category value)? category,
+    TResult? Function(_Favorite value)? favorite,
   }) {
     return favorite?.call(this);
   }

@@ -1,12 +1,9 @@
 part of '../joke_page.dart';
 
 class ButtonShare extends StatefulWidget with ShareScreenshot {
-  final String value;
+  ButtonShare({required this.value, super.key});
 
-  ButtonShare({
-    Key? key,
-    required this.value,
-  }) : super(key: key);
+  final String value;
 
   @override
   State<ButtonShare> createState() => _ButtonShareState();
@@ -52,18 +49,17 @@ class _ButtonShareState extends State<ButtonShare> {
 }
 
 class SharedWidgetImage extends StatelessWidget {
-  final String value;
-  final double height;
-  final double width;
-  final Color color;
-
   const SharedWidgetImage({
-    Key? key,
     required this.value,
     required this.height,
     required this.width,
     required this.color,
-  }) : super(key: key);
+    super.key,
+  });
+  final String value;
+  final double height;
+  final double width;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
