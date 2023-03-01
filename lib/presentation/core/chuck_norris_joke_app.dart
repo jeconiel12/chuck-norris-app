@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 class ChuckNorrisJokeApp extends StatefulWidget {
-  const ChuckNorrisJokeApp({Key? key}) : super(key: key);
+  const ChuckNorrisJokeApp({super.key});
 
   @override
   State<ChuckNorrisJokeApp> createState() => _ChuckNorrisJokeAppState();

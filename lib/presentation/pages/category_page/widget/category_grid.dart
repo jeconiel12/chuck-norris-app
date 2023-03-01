@@ -1,18 +1,18 @@
 part of '../category_page.dart';
 
 class CategoryGrid extends StatelessWidget {
-  final List<CategoryModel> categories;
   const CategoryGrid({
-    Key? key,
     required this.categories,
-  }) : super(key: key);
+    super.key,
+  });
+
+  final List<CategoryModel> categories;
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 1,
         crossAxisSpacing: 24,
         mainAxisSpacing: 24,
       ),
@@ -20,22 +20,23 @@ class CategoryGrid extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: categories.length,
-      itemBuilder: (context, index) => CategoryCard(category: categories[index]),
+      itemBuilder: (context, index) => CategoryCard(
+        category: categories[index],
+      ),
     );
   }
 }
 
 class CategoryCard extends StatelessWidget {
-  final CategoryModel category;
-
   const CategoryCard({
-    Key? key,
     required this.category,
-  }) : super(key: key);
+    super.key,
+  });
+  final CategoryModel category;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DecoratedBox(
       decoration: BoxDecoration(
         color: ThemeColor.white,
         borderRadius: BorderRadius.circular(8),
@@ -57,7 +58,7 @@ class CategoryCard extends StatelessWidget {
               SvgPicture.asset('assets/icons/${category.value}.svg'),
               const SizedBox(height: 10),
               Text(
-                '${category.value.substring(0, 1).toUpperCase()}${category.value.substring(1)}',
+                '${category.value.substring(0, 1).toUpperCase()}${category.value.substring(1)}', // ignore: lines_longer_than_80_chars
                 style: ThemeText.body1,
               )
             ],

@@ -2,13 +2,13 @@ part of 'joke_random_cubit.dart';
 
 @freezed
 class JokeRandomState with _$JokeRandomState {
-  const JokeRandomState._();
 
   const factory JokeRandomState({
     required JokeModel joke,
     required Option<FailureModel> failureOption,
     required bool isLoading,
   }) = _JokeRandomState;
+  const JokeRandomState._();
 
   factory JokeRandomState.initial() {
     return JokeRandomState(

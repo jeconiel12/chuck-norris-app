@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'joke_by_category_cubit.dart';
 
@@ -12,26 +12,7 @@ part of 'joke_by_category_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$JokeByCategoryStateTearOff {
-  const _$JokeByCategoryStateTearOff();
-
-  _JokeByCategoryState call(
-      {required JokeModel joke,
-      required bool isLoading,
-      required Option<FailureModel> failureOption}) {
-    return _JokeByCategoryState(
-      joke: joke,
-      isLoading: isLoading,
-      failureOption: failureOption,
-    );
-  }
-}
-
-/// @nodoc
-const $JokeByCategoryState = _$JokeByCategoryStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$JokeByCategoryState {
@@ -48,7 +29,8 @@ mixin _$JokeByCategoryState {
 abstract class $JokeByCategoryStateCopyWith<$Res> {
   factory $JokeByCategoryStateCopyWith(
           JokeByCategoryState value, $Res Function(JokeByCategoryState) then) =
-      _$JokeByCategoryStateCopyWithImpl<$Res>;
+      _$JokeByCategoryStateCopyWithImpl<$Res, JokeByCategoryState>;
+  @useResult
   $Res call(
       {JokeModel joke, bool isLoading, Option<FailureModel> failureOption});
 
@@ -56,51 +38,55 @@ abstract class $JokeByCategoryStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$JokeByCategoryStateCopyWithImpl<$Res>
+class _$JokeByCategoryStateCopyWithImpl<$Res, $Val extends JokeByCategoryState>
     implements $JokeByCategoryStateCopyWith<$Res> {
   _$JokeByCategoryStateCopyWithImpl(this._value, this._then);
 
-  final JokeByCategoryState _value;
   // ignore: unused_field
-  final $Res Function(JokeByCategoryState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? joke = freezed,
-    Object? isLoading = freezed,
-    Object? failureOption = freezed,
+    Object? joke = null,
+    Object? isLoading = null,
+    Object? failureOption = null,
   }) {
     return _then(_value.copyWith(
-      joke: joke == freezed
+      joke: null == joke
           ? _value.joke
           : joke // ignore: cast_nullable_to_non_nullable
               as JokeModel,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<FailureModel>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $JokeModelCopyWith<$Res> get joke {
     return $JokeModelCopyWith<$Res>(_value.joke, (value) {
-      return _then(_value.copyWith(joke: value));
+      return _then(_value.copyWith(joke: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$JokeByCategoryStateCopyWith<$Res>
+abstract class _$$_JokeByCategoryStateCopyWith<$Res>
     implements $JokeByCategoryStateCopyWith<$Res> {
-  factory _$JokeByCategoryStateCopyWith(_JokeByCategoryState value,
-          $Res Function(_JokeByCategoryState) then) =
-      __$JokeByCategoryStateCopyWithImpl<$Res>;
+  factory _$$_JokeByCategoryStateCopyWith(_$_JokeByCategoryState value,
+          $Res Function(_$_JokeByCategoryState) then) =
+      __$$_JokeByCategoryStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {JokeModel joke, bool isLoading, Option<FailureModel> failureOption});
 
@@ -109,32 +95,30 @@ abstract class _$JokeByCategoryStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$JokeByCategoryStateCopyWithImpl<$Res>
-    extends _$JokeByCategoryStateCopyWithImpl<$Res>
-    implements _$JokeByCategoryStateCopyWith<$Res> {
-  __$JokeByCategoryStateCopyWithImpl(
-      _JokeByCategoryState _value, $Res Function(_JokeByCategoryState) _then)
-      : super(_value, (v) => _then(v as _JokeByCategoryState));
+class __$$_JokeByCategoryStateCopyWithImpl<$Res>
+    extends _$JokeByCategoryStateCopyWithImpl<$Res, _$_JokeByCategoryState>
+    implements _$$_JokeByCategoryStateCopyWith<$Res> {
+  __$$_JokeByCategoryStateCopyWithImpl(_$_JokeByCategoryState _value,
+      $Res Function(_$_JokeByCategoryState) _then)
+      : super(_value, _then);
 
-  @override
-  _JokeByCategoryState get _value => super._value as _JokeByCategoryState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? joke = freezed,
-    Object? isLoading = freezed,
-    Object? failureOption = freezed,
+    Object? joke = null,
+    Object? isLoading = null,
+    Object? failureOption = null,
   }) {
-    return _then(_JokeByCategoryState(
-      joke: joke == freezed
+    return _then(_$_JokeByCategoryState(
+      joke: null == joke
           ? _value.joke
           : joke // ignore: cast_nullable_to_non_nullable
               as JokeModel,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<FailureModel>,
@@ -167,32 +151,31 @@ class _$_JokeByCategoryState extends _JokeByCategoryState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _JokeByCategoryState &&
-            const DeepCollectionEquality().equals(other.joke, joke) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality()
-                .equals(other.failureOption, failureOption));
+            other is _$_JokeByCategoryState &&
+            (identical(other.joke, joke) || other.joke == joke) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(joke),
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(failureOption));
+  int get hashCode => Object.hash(runtimeType, joke, isLoading, failureOption);
 
   @JsonKey(ignore: true)
   @override
-  _$JokeByCategoryStateCopyWith<_JokeByCategoryState> get copyWith =>
-      __$JokeByCategoryStateCopyWithImpl<_JokeByCategoryState>(
+  @pragma('vm:prefer-inline')
+  _$$_JokeByCategoryStateCopyWith<_$_JokeByCategoryState> get copyWith =>
+      __$$_JokeByCategoryStateCopyWithImpl<_$_JokeByCategoryState>(
           this, _$identity);
 }
 
 abstract class _JokeByCategoryState extends JokeByCategoryState {
   const factory _JokeByCategoryState(
-      {required JokeModel joke,
-      required bool isLoading,
-      required Option<FailureModel> failureOption}) = _$_JokeByCategoryState;
+          {required final JokeModel joke,
+          required final bool isLoading,
+          required final Option<FailureModel> failureOption}) =
+      _$_JokeByCategoryState;
   const _JokeByCategoryState._() : super._();
 
   @override
@@ -203,6 +186,6 @@ abstract class _JokeByCategoryState extends JokeByCategoryState {
   Option<FailureModel> get failureOption;
   @override
   @JsonKey(ignore: true)
-  _$JokeByCategoryStateCopyWith<_JokeByCategoryState> get copyWith =>
+  _$$_JokeByCategoryStateCopyWith<_$_JokeByCategoryState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'failure_model.dart';
 
@@ -12,27 +12,7 @@ part of 'failure_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FailureModelTearOff {
-  const _$FailureModelTearOff();
-
-  _Network network() {
-    return const _Network();
-  }
-
-  _Api api() {
-    return const _Api();
-  }
-
-  _Database database() {
-    return const _Database();
-  }
-}
-
-/// @nodoc
-const $FailureModel = _$FailureModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$FailureModel {
@@ -45,9 +25,9 @@ mixin _$FailureModel {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? network,
-    TResult Function()? api,
-    TResult Function()? database,
+    TResult? Function()? network,
+    TResult? Function()? api,
+    TResult? Function()? database,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,9 +47,9 @@ mixin _$FailureModel {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Network value)? network,
-    TResult Function(_Api value)? api,
-    TResult Function(_Database value)? database,
+    TResult? Function(_Network value)? network,
+    TResult? Function(_Api value)? api,
+    TResult? Function(_Database value)? database,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -86,32 +66,33 @@ mixin _$FailureModel {
 abstract class $FailureModelCopyWith<$Res> {
   factory $FailureModelCopyWith(
           FailureModel value, $Res Function(FailureModel) then) =
-      _$FailureModelCopyWithImpl<$Res>;
+      _$FailureModelCopyWithImpl<$Res, FailureModel>;
 }
 
 /// @nodoc
-class _$FailureModelCopyWithImpl<$Res> implements $FailureModelCopyWith<$Res> {
+class _$FailureModelCopyWithImpl<$Res, $Val extends FailureModel>
+    implements $FailureModelCopyWith<$Res> {
   _$FailureModelCopyWithImpl(this._value, this._then);
 
-  final FailureModel _value;
   // ignore: unused_field
-  final $Res Function(FailureModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$NetworkCopyWith<$Res> {
-  factory _$NetworkCopyWith(_Network value, $Res Function(_Network) then) =
-      __$NetworkCopyWithImpl<$Res>;
+abstract class _$$_NetworkCopyWith<$Res> {
+  factory _$$_NetworkCopyWith(
+          _$_Network value, $Res Function(_$_Network) then) =
+      __$$_NetworkCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NetworkCopyWithImpl<$Res> extends _$FailureModelCopyWithImpl<$Res>
-    implements _$NetworkCopyWith<$Res> {
-  __$NetworkCopyWithImpl(_Network _value, $Res Function(_Network) _then)
-      : super(_value, (v) => _then(v as _Network));
-
-  @override
-  _Network get _value => super._value as _Network;
+class __$$_NetworkCopyWithImpl<$Res>
+    extends _$FailureModelCopyWithImpl<$Res, _$_Network>
+    implements _$$_NetworkCopyWith<$Res> {
+  __$$_NetworkCopyWithImpl(_$_Network _value, $Res Function(_$_Network) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -127,13 +108,13 @@ class _$_Network with DiagnosticableTreeMixin implements _Network {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'FailureModel.network'));
+    properties.add(DiagnosticsProperty('type', 'FailureModel.network'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Network);
+        (other.runtimeType == runtimeType && other is _$_Network);
   }
 
   @override
@@ -152,9 +133,9 @@ class _$_Network with DiagnosticableTreeMixin implements _Network {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? network,
-    TResult Function()? api,
-    TResult Function()? database,
+    TResult? Function()? network,
+    TResult? Function()? api,
+    TResult? Function()? database,
   }) {
     return network?.call();
   }
@@ -186,9 +167,9 @@ class _$_Network with DiagnosticableTreeMixin implements _Network {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Network value)? network,
-    TResult Function(_Api value)? api,
-    TResult Function(_Database value)? database,
+    TResult? Function(_Network value)? network,
+    TResult? Function(_Api value)? api,
+    TResult? Function(_Database value)? database,
   }) {
     return network?.call(this);
   }
@@ -213,19 +194,17 @@ abstract class _Network implements FailureModel {
 }
 
 /// @nodoc
-abstract class _$ApiCopyWith<$Res> {
-  factory _$ApiCopyWith(_Api value, $Res Function(_Api) then) =
-      __$ApiCopyWithImpl<$Res>;
+abstract class _$$_ApiCopyWith<$Res> {
+  factory _$$_ApiCopyWith(_$_Api value, $Res Function(_$_Api) then) =
+      __$$_ApiCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ApiCopyWithImpl<$Res> extends _$FailureModelCopyWithImpl<$Res>
-    implements _$ApiCopyWith<$Res> {
-  __$ApiCopyWithImpl(_Api _value, $Res Function(_Api) _then)
-      : super(_value, (v) => _then(v as _Api));
-
-  @override
-  _Api get _value => super._value as _Api;
+class __$$_ApiCopyWithImpl<$Res>
+    extends _$FailureModelCopyWithImpl<$Res, _$_Api>
+    implements _$$_ApiCopyWith<$Res> {
+  __$$_ApiCopyWithImpl(_$_Api _value, $Res Function(_$_Api) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -241,13 +220,13 @@ class _$_Api with DiagnosticableTreeMixin implements _Api {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'FailureModel.api'));
+    properties.add(DiagnosticsProperty('type', 'FailureModel.api'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Api);
+        (other.runtimeType == runtimeType && other is _$_Api);
   }
 
   @override
@@ -266,9 +245,9 @@ class _$_Api with DiagnosticableTreeMixin implements _Api {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? network,
-    TResult Function()? api,
-    TResult Function()? database,
+    TResult? Function()? network,
+    TResult? Function()? api,
+    TResult? Function()? database,
   }) {
     return api?.call();
   }
@@ -300,9 +279,9 @@ class _$_Api with DiagnosticableTreeMixin implements _Api {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Network value)? network,
-    TResult Function(_Api value)? api,
-    TResult Function(_Database value)? database,
+    TResult? Function(_Network value)? network,
+    TResult? Function(_Api value)? api,
+    TResult? Function(_Database value)? database,
   }) {
     return api?.call(this);
   }
@@ -327,19 +306,19 @@ abstract class _Api implements FailureModel {
 }
 
 /// @nodoc
-abstract class _$DatabaseCopyWith<$Res> {
-  factory _$DatabaseCopyWith(_Database value, $Res Function(_Database) then) =
-      __$DatabaseCopyWithImpl<$Res>;
+abstract class _$$_DatabaseCopyWith<$Res> {
+  factory _$$_DatabaseCopyWith(
+          _$_Database value, $Res Function(_$_Database) then) =
+      __$$_DatabaseCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DatabaseCopyWithImpl<$Res> extends _$FailureModelCopyWithImpl<$Res>
-    implements _$DatabaseCopyWith<$Res> {
-  __$DatabaseCopyWithImpl(_Database _value, $Res Function(_Database) _then)
-      : super(_value, (v) => _then(v as _Database));
-
-  @override
-  _Database get _value => super._value as _Database;
+class __$$_DatabaseCopyWithImpl<$Res>
+    extends _$FailureModelCopyWithImpl<$Res, _$_Database>
+    implements _$$_DatabaseCopyWith<$Res> {
+  __$$_DatabaseCopyWithImpl(
+      _$_Database _value, $Res Function(_$_Database) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -355,13 +334,13 @@ class _$_Database with DiagnosticableTreeMixin implements _Database {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'FailureModel.database'));
+    properties.add(DiagnosticsProperty('type', 'FailureModel.database'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Database);
+        (other.runtimeType == runtimeType && other is _$_Database);
   }
 
   @override
@@ -380,9 +359,9 @@ class _$_Database with DiagnosticableTreeMixin implements _Database {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? network,
-    TResult Function()? api,
-    TResult Function()? database,
+    TResult? Function()? network,
+    TResult? Function()? api,
+    TResult? Function()? database,
   }) {
     return database?.call();
   }
@@ -414,9 +393,9 @@ class _$_Database with DiagnosticableTreeMixin implements _Database {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Network value)? network,
-    TResult Function(_Api value)? api,
-    TResult Function(_Database value)? database,
+    TResult? Function(_Network value)? network,
+    TResult? Function(_Api value)? api,
+    TResult? Function(_Database value)? database,
   }) {
     return database?.call(this);
   }

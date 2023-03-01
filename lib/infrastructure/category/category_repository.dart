@@ -1,17 +1,18 @@
 import 'dart:io';
 
+import 'package:dartz/dartz.dart';
+
 import 'package:chuck_norris_joke/domain/category/category_model.dart';
 import 'package:chuck_norris_joke/domain/category/i_category_repository.dart';
-import 'package:chuck_norris_joke/infrastructure/category/category_api.dart';
-import 'package:dartz/dartz.dart';
 import 'package:chuck_norris_joke/domain/core/failure_model.dart';
+import 'package:chuck_norris_joke/infrastructure/category/category_api.dart';
 
 class CategoryRepository implements ICategoryRepository {
-  final CategoryApi categoryApi;
-
   CategoryRepository({
     required this.categoryApi,
   });
+
+  final CategoryApi categoryApi;
 
   @override
   Future<Either<FailureModel, List<CategoryModel>>> getCategories() async {

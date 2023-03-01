@@ -1,9 +1,7 @@
 part of '../category_page.dart';
 
 class _CategoryHeader extends StatelessWidget {
-  const _CategoryHeader({
-    Key? key,
-  }) : super(key: key);
+  const _CategoryHeader();
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +14,7 @@ class _CategoryHeader extends StatelessWidget {
             child: const Icon(Icons.close),
           ),
           const SizedBox(width: 16),
-          Text('Category', style: ThemeText.header6),
+          const Text('Category', style: ThemeText.header6),
         ],
       ),
     );

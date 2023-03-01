@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'joke_favorite_cubit.dart';
 
@@ -12,24 +12,7 @@ part of 'joke_favorite_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$JokeFavoriteStateTearOff {
-  const _$JokeFavoriteStateTearOff();
-
-  _JokeFavoriteState call(
-      {required List<JokeModel> jokes,
-      required Option<FailureModel> failureOption}) {
-    return _JokeFavoriteState(
-      jokes: jokes,
-      failureOption: failureOption,
-    );
-  }
-}
-
-/// @nodoc
-const $JokeFavoriteState = _$JokeFavoriteStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$JokeFavoriteState {
@@ -45,69 +28,71 @@ mixin _$JokeFavoriteState {
 abstract class $JokeFavoriteStateCopyWith<$Res> {
   factory $JokeFavoriteStateCopyWith(
           JokeFavoriteState value, $Res Function(JokeFavoriteState) then) =
-      _$JokeFavoriteStateCopyWithImpl<$Res>;
+      _$JokeFavoriteStateCopyWithImpl<$Res, JokeFavoriteState>;
+  @useResult
   $Res call({List<JokeModel> jokes, Option<FailureModel> failureOption});
 }
 
 /// @nodoc
-class _$JokeFavoriteStateCopyWithImpl<$Res>
+class _$JokeFavoriteStateCopyWithImpl<$Res, $Val extends JokeFavoriteState>
     implements $JokeFavoriteStateCopyWith<$Res> {
   _$JokeFavoriteStateCopyWithImpl(this._value, this._then);
 
-  final JokeFavoriteState _value;
   // ignore: unused_field
-  final $Res Function(JokeFavoriteState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? jokes = freezed,
-    Object? failureOption = freezed,
+    Object? jokes = null,
+    Object? failureOption = null,
   }) {
     return _then(_value.copyWith(
-      jokes: jokes == freezed
+      jokes: null == jokes
           ? _value.jokes
           : jokes // ignore: cast_nullable_to_non_nullable
               as List<JokeModel>,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<FailureModel>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$JokeFavoriteStateCopyWith<$Res>
+abstract class _$$_JokeFavoriteStateCopyWith<$Res>
     implements $JokeFavoriteStateCopyWith<$Res> {
-  factory _$JokeFavoriteStateCopyWith(
-          _JokeFavoriteState value, $Res Function(_JokeFavoriteState) then) =
-      __$JokeFavoriteStateCopyWithImpl<$Res>;
+  factory _$$_JokeFavoriteStateCopyWith(_$_JokeFavoriteState value,
+          $Res Function(_$_JokeFavoriteState) then) =
+      __$$_JokeFavoriteStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<JokeModel> jokes, Option<FailureModel> failureOption});
 }
 
 /// @nodoc
-class __$JokeFavoriteStateCopyWithImpl<$Res>
-    extends _$JokeFavoriteStateCopyWithImpl<$Res>
-    implements _$JokeFavoriteStateCopyWith<$Res> {
-  __$JokeFavoriteStateCopyWithImpl(
-      _JokeFavoriteState _value, $Res Function(_JokeFavoriteState) _then)
-      : super(_value, (v) => _then(v as _JokeFavoriteState));
+class __$$_JokeFavoriteStateCopyWithImpl<$Res>
+    extends _$JokeFavoriteStateCopyWithImpl<$Res, _$_JokeFavoriteState>
+    implements _$$_JokeFavoriteStateCopyWith<$Res> {
+  __$$_JokeFavoriteStateCopyWithImpl(
+      _$_JokeFavoriteState _value, $Res Function(_$_JokeFavoriteState) _then)
+      : super(_value, _then);
 
-  @override
-  _JokeFavoriteState get _value => super._value as _JokeFavoriteState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? jokes = freezed,
-    Object? failureOption = freezed,
+    Object? jokes = null,
+    Object? failureOption = null,
   }) {
-    return _then(_JokeFavoriteState(
-      jokes: jokes == freezed
-          ? _value.jokes
+    return _then(_$_JokeFavoriteState(
+      jokes: null == jokes
+          ? _value._jokes
           : jokes // ignore: cast_nullable_to_non_nullable
               as List<JokeModel>,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<FailureModel>,
@@ -118,11 +103,19 @@ class __$JokeFavoriteStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_JokeFavoriteState extends _JokeFavoriteState {
-  const _$_JokeFavoriteState({required this.jokes, required this.failureOption})
-      : super._();
+  const _$_JokeFavoriteState(
+      {required final List<JokeModel> jokes, required this.failureOption})
+      : _jokes = jokes,
+        super._();
 
+  final List<JokeModel> _jokes;
   @override
-  final List<JokeModel> jokes;
+  List<JokeModel> get jokes {
+    if (_jokes is EqualUnmodifiableListView) return _jokes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_jokes);
+  }
+
   @override
   final Option<FailureModel> failureOption;
 
@@ -135,28 +128,29 @@ class _$_JokeFavoriteState extends _JokeFavoriteState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _JokeFavoriteState &&
-            const DeepCollectionEquality().equals(other.jokes, jokes) &&
-            const DeepCollectionEquality()
-                .equals(other.failureOption, failureOption));
+            other is _$_JokeFavoriteState &&
+            const DeepCollectionEquality().equals(other._jokes, _jokes) &&
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(jokes),
-      const DeepCollectionEquality().hash(failureOption));
+      runtimeType, const DeepCollectionEquality().hash(_jokes), failureOption);
 
   @JsonKey(ignore: true)
   @override
-  _$JokeFavoriteStateCopyWith<_JokeFavoriteState> get copyWith =>
-      __$JokeFavoriteStateCopyWithImpl<_JokeFavoriteState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_JokeFavoriteStateCopyWith<_$_JokeFavoriteState> get copyWith =>
+      __$$_JokeFavoriteStateCopyWithImpl<_$_JokeFavoriteState>(
+          this, _$identity);
 }
 
 abstract class _JokeFavoriteState extends JokeFavoriteState {
   const factory _JokeFavoriteState(
-      {required List<JokeModel> jokes,
-      required Option<FailureModel> failureOption}) = _$_JokeFavoriteState;
+          {required final List<JokeModel> jokes,
+          required final Option<FailureModel> failureOption}) =
+      _$_JokeFavoriteState;
   const _JokeFavoriteState._() : super._();
 
   @override
@@ -165,6 +159,6 @@ abstract class _JokeFavoriteState extends JokeFavoriteState {
   Option<FailureModel> get failureOption;
   @override
   @JsonKey(ignore: true)
-  _$JokeFavoriteStateCopyWith<_JokeFavoriteState> get copyWith =>
+  _$$_JokeFavoriteStateCopyWith<_$_JokeFavoriteState> get copyWith =>
       throw _privateConstructorUsedError;
 }

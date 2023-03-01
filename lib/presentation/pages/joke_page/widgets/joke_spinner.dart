@@ -1,7 +1,7 @@
 part of '../joke_page.dart';
 
 class JokeSpinner extends StatelessWidget {
-  const JokeSpinner({Key? key}) : super(key: key);
+  const JokeSpinner({super.key});
 
   @override
   Widget build(BuildContext context) {

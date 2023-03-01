@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'category_cubit.dart';
 
@@ -12,26 +12,7 @@ part of 'category_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CategoryStateTearOff {
-  const _$CategoryStateTearOff();
-
-  _CategoryState call(
-      {required List<CategoryModel> categories,
-      required bool isLoading,
-      required Option<FailureModel> failureOption}) {
-    return _CategoryState(
-      categories: categories,
-      isLoading: isLoading,
-      failureOption: failureOption,
-    );
-  }
-}
-
-/// @nodoc
-const $CategoryState = _$CategoryStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CategoryState {
@@ -48,7 +29,8 @@ mixin _$CategoryState {
 abstract class $CategoryStateCopyWith<$Res> {
   factory $CategoryStateCopyWith(
           CategoryState value, $Res Function(CategoryState) then) =
-      _$CategoryStateCopyWithImpl<$Res>;
+      _$CategoryStateCopyWithImpl<$Res, CategoryState>;
+  @useResult
   $Res call(
       {List<CategoryModel> categories,
       bool isLoading,
@@ -56,44 +38,47 @@ abstract class $CategoryStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CategoryStateCopyWithImpl<$Res>
+class _$CategoryStateCopyWithImpl<$Res, $Val extends CategoryState>
     implements $CategoryStateCopyWith<$Res> {
   _$CategoryStateCopyWithImpl(this._value, this._then);
 
-  final CategoryState _value;
   // ignore: unused_field
-  final $Res Function(CategoryState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categories = freezed,
-    Object? isLoading = freezed,
-    Object? failureOption = freezed,
+    Object? categories = null,
+    Object? isLoading = null,
+    Object? failureOption = null,
   }) {
     return _then(_value.copyWith(
-      categories: categories == freezed
+      categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryModel>,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<FailureModel>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$CategoryStateCopyWith<$Res>
+abstract class _$$_CategoryStateCopyWith<$Res>
     implements $CategoryStateCopyWith<$Res> {
-  factory _$CategoryStateCopyWith(
-          _CategoryState value, $Res Function(_CategoryState) then) =
-      __$CategoryStateCopyWithImpl<$Res>;
+  factory _$$_CategoryStateCopyWith(
+          _$_CategoryState value, $Res Function(_$_CategoryState) then) =
+      __$$_CategoryStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {List<CategoryModel> categories,
       bool isLoading,
@@ -101,32 +86,30 @@ abstract class _$CategoryStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CategoryStateCopyWithImpl<$Res>
-    extends _$CategoryStateCopyWithImpl<$Res>
-    implements _$CategoryStateCopyWith<$Res> {
-  __$CategoryStateCopyWithImpl(
-      _CategoryState _value, $Res Function(_CategoryState) _then)
-      : super(_value, (v) => _then(v as _CategoryState));
+class __$$_CategoryStateCopyWithImpl<$Res>
+    extends _$CategoryStateCopyWithImpl<$Res, _$_CategoryState>
+    implements _$$_CategoryStateCopyWith<$Res> {
+  __$$_CategoryStateCopyWithImpl(
+      _$_CategoryState _value, $Res Function(_$_CategoryState) _then)
+      : super(_value, _then);
 
-  @override
-  _CategoryState get _value => super._value as _CategoryState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categories = freezed,
-    Object? isLoading = freezed,
-    Object? failureOption = freezed,
+    Object? categories = null,
+    Object? isLoading = null,
+    Object? failureOption = null,
   }) {
-    return _then(_CategoryState(
-      categories: categories == freezed
-          ? _value.categories
+    return _then(_$_CategoryState(
+      categories: null == categories
+          ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<CategoryModel>,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      failureOption: failureOption == freezed
+      failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<FailureModel>,
@@ -138,13 +121,20 @@ class __$CategoryStateCopyWithImpl<$Res>
 
 class _$_CategoryState extends _CategoryState {
   const _$_CategoryState(
-      {required this.categories,
+      {required final List<CategoryModel> categories,
       required this.isLoading,
       required this.failureOption})
-      : super._();
+      : _categories = categories,
+        super._();
 
+  final List<CategoryModel> _categories;
   @override
-  final List<CategoryModel> categories;
+  List<CategoryModel> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
+
   @override
   final bool isLoading;
   @override
@@ -159,32 +149,34 @@ class _$_CategoryState extends _CategoryState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CategoryState &&
+            other is _$_CategoryState &&
             const DeepCollectionEquality()
-                .equals(other.categories, categories) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality()
-                .equals(other.failureOption, failureOption));
+                .equals(other._categories, _categories) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.failureOption, failureOption) ||
+                other.failureOption == failureOption));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(categories),
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(failureOption));
+      const DeepCollectionEquality().hash(_categories),
+      isLoading,
+      failureOption);
 
   @JsonKey(ignore: true)
   @override
-  _$CategoryStateCopyWith<_CategoryState> get copyWith =>
-      __$CategoryStateCopyWithImpl<_CategoryState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CategoryStateCopyWith<_$_CategoryState> get copyWith =>
+      __$$_CategoryStateCopyWithImpl<_$_CategoryState>(this, _$identity);
 }
 
 abstract class _CategoryState extends CategoryState {
   const factory _CategoryState(
-      {required List<CategoryModel> categories,
-      required bool isLoading,
-      required Option<FailureModel> failureOption}) = _$_CategoryState;
+      {required final List<CategoryModel> categories,
+      required final bool isLoading,
+      required final Option<FailureModel> failureOption}) = _$_CategoryState;
   const _CategoryState._() : super._();
 
   @override
@@ -195,6 +187,6 @@ abstract class _CategoryState extends CategoryState {
   Option<FailureModel> get failureOption;
   @override
   @JsonKey(ignore: true)
-  _$CategoryStateCopyWith<_CategoryState> get copyWith =>
+  _$$_CategoryStateCopyWith<_$_CategoryState> get copyWith =>
       throw _privateConstructorUsedError;
 }

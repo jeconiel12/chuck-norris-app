@@ -1,7 +1,5 @@
-// Package imports:
 import 'package:dartz/dartz.dart';
 
-// Project imports:
 import 'package:chuck_norris_joke/domain/core/failure_model.dart';
 import 'package:chuck_norris_joke/domain/joke/joke_model.dart';
 

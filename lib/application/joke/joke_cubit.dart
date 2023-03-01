@@ -1,6 +1,7 @@
-import 'package:bloc/bloc.dart';
-import 'package:chuck_norris_joke/domain/category/category_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'package:chuck_norris_joke/domain/category/category_model.dart';
 
 part 'joke_state.dart';
 part 'joke_cubit.freezed.dart';

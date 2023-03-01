@@ -1,9 +1,7 @@
 part of '../category_page.dart';
 
 class _CategoryBody extends StatelessWidget {
-  const _CategoryBody({
-    Key? key,
-  }) : super(key: key);
+  const _CategoryBody();
 
   @override
   Widget build(BuildContext context) {

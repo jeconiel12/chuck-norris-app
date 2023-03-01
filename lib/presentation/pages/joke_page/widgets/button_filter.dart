@@ -2,14 +2,14 @@ part of '../joke_page.dart';
 
 class ButtonFilter extends StatelessWidget {
   const ButtonFilter({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     final jokeCubit = BlocProvider.of<JokeCubit>(context);
     return GestureDetector(
-      onTap: () => showModalBottomSheet(
+      onTap: () => showModalBottomSheet<void>(
         isScrollControlled: true,
         backgroundColor: Colors.transparent,
         context: context,
@@ -37,8 +37,8 @@ class ButtonFilter extends StatelessWidget {
                   random: () => 'All Jokes',
                   favorite: () => 'My Favorites',
                   category: (category) {
-                    final String text = category.value;
-                    return 'Category: ${text.substring(0, 1).toUpperCase()}${text.substring(1)}';
+                    final text = category.value;
+                    return 'Category: ${text.substring(0, 1).toUpperCase()}${text.substring(1)}'; // ignore: lines_longer_than_80_chars
                   },
                 ),
                 style: ThemeText.body1.copyWith(
@@ -55,8 +55,8 @@ class ButtonFilter extends StatelessWidget {
 
 class CategoryDialog extends StatelessWidget {
   const CategoryDialog({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -90,8 +90,10 @@ class CategoryDialog extends StatelessWidget {
                 ),
               );
               if (category != null) {
+                // ignore: use_build_context_synchronously
                 context.read<JokeCubit>().changeFilter(2, category: category);
               }
+              // ignore: use_build_context_synchronously
               Navigator.pop(context);
             },
             leading: SvgPicture.asset('assets/icons/categories.svg'),

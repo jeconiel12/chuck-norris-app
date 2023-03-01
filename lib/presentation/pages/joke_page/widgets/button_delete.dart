@@ -1,12 +1,12 @@
 part of '../joke_page.dart';
 
 class ButtonDelete extends StatelessWidget {
-  final String jokeId;
-
   const ButtonDelete({
-    Key? key,
     required this.jokeId,
-  }) : super(key: key);
+    super.key,
+  });
+
+  final String jokeId;
 
   @override
   Widget build(BuildContext context) {

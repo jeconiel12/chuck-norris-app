@@ -1,24 +1,28 @@
+import 'package:flutter/foundation.dart';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:chuck_norris_joke/domain/joke/i_joke_repository.dart';
 import 'package:chuck_norris_joke/domain/joke/joke_model.dart';
-import 'package:bloc/bloc.dart';
-import 'package:flutter/foundation.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'favorite_state.dart';
 part 'favorite_cubit.freezed.dart';
 
 class FavoriteCubit extends Cubit<FavoriteState> {
-  final IJokeRepository jokeRepository;
-
   FavoriteCubit({
     required this.jokeRepository,
   }) : super(FavoriteState.initial());
+
+  final IJokeRepository jokeRepository;
 
   Future<void> checkIfJokeFavorite(String jokeId) async {
     final result = await jokeRepository.checkIfJokeFavorite(jokeId);
     result.fold(
       (_) => emit(state.copyWith(isError: true, isJokeFavorite: false)),
-      (isJokeFavorite) => emit(state.copyWith(isError: false, isJokeFavorite: isJokeFavorite)),
+      (isJokeFavorite) => emit(
+        state.copyWith(isError: false, isJokeFavorite: isJokeFavorite),
+      ),
     );
   }
 
@@ -28,6 +32,6 @@ class FavoriteCubit extends Cubit<FavoriteState> {
     } else {
       await jokeRepository.saveFavoriteJoke(joke);
     }
-    checkIfJokeFavorite(joke.id);
+    await checkIfJokeFavorite(joke.id);
   }
 }

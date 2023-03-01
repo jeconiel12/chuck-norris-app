@@ -1,7 +1,7 @@
 part of 'joke_page.dart';
 
 class JokeAll extends StatefulWidget {
-  const JokeAll({Key? key}) : super(key: key);
+  const JokeAll({super.key});
 
   @override
   State<JokeAll> createState() => _JokeAllState();
@@ -28,14 +28,16 @@ class _JokeAllState extends State<JokeAll> {
       create: (context) => _jokeRandomCubit,
       child: Stack(
         children: [
-          JokeRefreshIndicator(onRefresh: () => _jokeRandomCubit.getRandomJoke()),
+          JokeRefreshIndicator(onRefresh: _jokeRandomCubit.getRandomJoke),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               BlocBuilder<JokeRandomCubit, JokeRandomState>(
                 buildWhen: (p, c) => p.showColorButton != c.showColorButton,
                 builder: (context, state) {
-                  return state.showColorButton ? const ButtonColor() : const SizedBox.shrink();
+                  return state.showColorButton
+                      ? const ButtonColor()
+                      : const SizedBox.shrink();
                 },
               ),
               Expanded(
@@ -56,7 +58,8 @@ class _JokeAllState extends State<JokeAll> {
                 child: Row(
                   children: [
                     BlocBuilder<JokeRandomCubit, JokeRandomState>(
-                      buildWhen: (p, c) => p.showFilterButton != c.showFilterButton,
+                      buildWhen: (p, c) =>
+                          p.showFilterButton != c.showFilterButton,
                       builder: (context, state) {
                         return state.showFilterButton
                             ? const ButtonFilter()
@@ -65,7 +68,8 @@ class _JokeAllState extends State<JokeAll> {
                     ),
                     const Spacer(),
                     BlocBuilder<JokeRandomCubit, JokeRandomState>(
-                      buildWhen: (p, c) => p.showShareButton != c.showShareButton,
+                      buildWhen: (p, c) =>
+                          p.showShareButton != c.showShareButton,
                       builder: (context, state) {
                         return state.showShareButton
                             ? ButtonShare(value: state.joke.value)
@@ -74,7 +78,8 @@ class _JokeAllState extends State<JokeAll> {
                     ),
                     const SizedBox(width: 16),
                     BlocBuilder<JokeRandomCubit, JokeRandomState>(
-                      buildWhen: (p, c) => p.showFavoriteButton != c.showFavoriteButton,
+                      buildWhen: (p, c) =>
+                          p.showFavoriteButton != c.showFavoriteButton,
                       builder: (context, state) {
                         return state.showFavoriteButton
                             ? ButtonFavorite(joke: state.joke)

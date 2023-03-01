@@ -1,12 +1,14 @@
 import 'dart:convert';
-import 'package:chuck_norris_joke/domain/category/category_model.dart';
-import 'package:chuck_norris_joke/infrastructure/category/category_dto.dart';
+
 import 'package:http/http.dart' as http;
 
-class CategoryApi {
-  static const String _baseUrl = 'https://api.chucknorris.io/jokes';
+import 'package:chuck_norris_joke/domain/category/category_model.dart';
+import 'package:chuck_norris_joke/infrastructure/category/category_dto.dart';
 
+class CategoryApi {
   const CategoryApi();
+
+  static const String _baseUrl = 'https://api.chucknorris.io/jokes';
 
   Future<List<CategoryModel>> getCategories() async {
     final url = Uri.parse('$_baseUrl/categories');

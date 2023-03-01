@@ -1,7 +1,7 @@
 part of 'joke_page.dart';
 
 class JokeFavorites extends StatefulWidget {
-  const JokeFavorites({Key? key}) : super(key: key);
+  const JokeFavorites({super.key});
 
   @override
   State<JokeFavorites> createState() => _JokeFavoritesState();
@@ -50,12 +50,12 @@ class _JokeFavoritesState extends State<JokeFavorites> {
 }
 
 class JokeView extends StatelessWidget {
-  final JokeModel joke;
-
   const JokeView({
-    Key? key,
     required this.joke,
-  }) : super(key: key);
+    super.key,
+  });
+
+  final JokeModel joke;
 
   @override
   Widget build(BuildContext context) {
@@ -93,12 +93,11 @@ class JokeView extends StatelessWidget {
 }
 
 class JokeSliderInitial extends StatelessWidget {
-  final bool isJokesEmpty;
-
   const JokeSliderInitial({
-    Key? key,
     required this.isJokesEmpty,
-  }) : super(key: key);
+    super.key,
+  });
+  final bool isJokesEmpty;
 
   @override
   Widget build(BuildContext context) {

@@ -1,16 +1,18 @@
-import 'package:chuck_norris_joke/infrastructure/color/color_table.dart';
 import 'package:flutter/material.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'package:chuck_norris_joke/infrastructure/color/color_table.dart';
 
 part 'color_dto.freezed.dart';
 
 @freezed
 class ColorDto with _$ColorDto {
-  const ColorDto._();
-
   factory ColorDto({
     required String code,
   }) = _ColorDto;
+
+  const ColorDto._();
 
   factory ColorDto.fromTable(ColorTable table) {
     return ColorDto(code: table.code);

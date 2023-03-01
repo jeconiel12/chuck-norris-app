@@ -1,11 +1,12 @@
 part of '../joke_page.dart';
 
 class JokeValueText extends StatelessWidget {
-  final String value;
   const JokeValueText({
-    Key? key,
     required this.value,
-  }) : super(key: key);
+    super.key,
+  });
+
+  final String value;
 
   @override
   Widget build(BuildContext context) {

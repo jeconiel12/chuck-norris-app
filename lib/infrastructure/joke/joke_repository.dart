@@ -1,25 +1,23 @@
 // Dart imports:
 import 'dart:io';
 
-// Package imports:
-import 'package:chuck_norris_joke/infrastructure/joke/joke_dto.dart';
-import 'package:chuck_norris_joke/infrastructure/joke/joke_hive.dart';
 import 'package:dartz/dartz.dart';
 
-// Project imports:
 import 'package:chuck_norris_joke/domain/core/failure_model.dart';
 import 'package:chuck_norris_joke/domain/joke/i_joke_repository.dart';
 import 'package:chuck_norris_joke/domain/joke/joke_model.dart';
 import 'package:chuck_norris_joke/infrastructure/joke/joke_api.dart';
+import 'package:chuck_norris_joke/infrastructure/joke/joke_dto.dart';
+import 'package:chuck_norris_joke/infrastructure/joke/joke_hive.dart';
 
 class JokeRepository implements IJokeRepository {
-  final JokeApi jokeApi;
-  final JokeHive jokeHive;
-
   const JokeRepository({
     required this.jokeApi,
     required this.jokeHive,
   });
+
+  final JokeApi jokeApi;
+  final JokeHive jokeHive;
 
   @override
   Future<Either<FailureModel, JokeModel>> getRandomJoke() async {
@@ -34,7 +32,9 @@ class JokeRepository implements IJokeRepository {
   }
 
   @override
-  Future<Either<FailureModel, JokeModel>> getJokeByCategory(String category) async {
+  Future<Either<FailureModel, JokeModel>> getJokeByCategory(
+    String category,
+  ) async {
     try {
       final joke = await jokeApi.getJokeByCategory(category);
       return Right(joke);
@@ -69,8 +69,8 @@ class JokeRepository implements IJokeRepository {
   Future<Either<FailureModel, List<JokeModel>>> getFavoriteJokes() async {
     try {
       final jokeTables = await jokeHive.getFavoriteJokes();
-      List<JokeModel> jokes = [];
-      for (var table in jokeTables) {
+      final jokes = <JokeModel>[];
+      for (final table in jokeTables) {
         jokes.add(JokeDto.fromTable(table).toDomain);
       }
       return Right(jokes);

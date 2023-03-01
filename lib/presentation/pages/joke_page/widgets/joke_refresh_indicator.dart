@@ -1,12 +1,12 @@
 part of '../joke_page.dart';
 
 class JokeRefreshIndicator extends StatelessWidget {
-  final Future<void> Function() onRefresh;
-
   const JokeRefreshIndicator({
-    Key? key,
     required this.onRefresh,
-  }) : super(key: key);
+    super.key,
+  });
+
+  final Future<void> Function() onRefresh;
 
   @override
   Widget build(BuildContext context) {

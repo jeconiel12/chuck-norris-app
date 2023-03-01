@@ -1,3 +1,5 @@
+import 'package:get_it/get_it.dart';
+
 import 'package:chuck_norris_joke/application/category/category_cubit.dart';
 import 'package:chuck_norris_joke/application/color/color_cubit.dart';
 import 'package:chuck_norris_joke/application/joke/favorite/favorite_cubit.dart';
@@ -16,28 +18,38 @@ import 'package:chuck_norris_joke/infrastructure/joke/joke_api.dart';
 import 'package:chuck_norris_joke/infrastructure/joke/joke_hive.dart';
 import 'package:chuck_norris_joke/infrastructure/joke/joke_repository.dart';
 
-import 'package:get_it/get_it.dart';
-
 final getIt = GetIt.instance;
 
 void setup() {
-  getIt.registerLazySingleton<JokeApi>(() => const JokeApi());
-  getIt.registerLazySingleton<JokeHive>(() => const JokeHive());
-  getIt.registerLazySingleton<ColorHive>(() => const ColorHive());
-  getIt.registerLazySingleton<CategoryApi>(() => const CategoryApi());
-  getIt.registerLazySingleton<IJokeRepository>(
-    () => JokeRepository(
-      jokeApi: getIt(),
-      jokeHive: getIt(),
-    ),
-  );
-  getIt.registerLazySingleton<ICategoryRepository>(() => CategoryRepository(categoryApi: getIt()));
-  getIt.registerLazySingleton<IColorRepository>(() => ColorRepository(colorHive: getIt()));
-  getIt.registerFactory<JokeCubit>(() => JokeCubit());
-  getIt.registerFactory<JokeRandomCubit>(() => JokeRandomCubit(jokeRepository: getIt()));
-  getIt.registerFactory<JokeByCategoryCubit>(() => JokeByCategoryCubit(jokeRepository: getIt()));
-  getIt.registerFactory<JokeFavoriteCubit>(() => JokeFavoriteCubit(jokeRepository: getIt()));
-  getIt.registerFactory<FavoriteCubit>(() => FavoriteCubit(jokeRepository: getIt()));
-  getIt.registerFactory<ColorCubit>(() => ColorCubit(colorRepository: getIt()));
-  getIt.registerFactory<CategoryCubit>(() => CategoryCubit(categoryRepository: getIt()));
+  getIt
+    ..registerLazySingleton<JokeApi>(() => const JokeApi())
+    ..registerLazySingleton<JokeHive>(() => const JokeHive())
+    ..registerLazySingleton<ColorHive>(() => const ColorHive())
+    ..registerLazySingleton<CategoryApi>(() => const CategoryApi())
+    ..registerLazySingleton<IJokeRepository>(
+      () => JokeRepository(jokeApi: getIt(), jokeHive: getIt()),
+    )
+    ..registerLazySingleton<ICategoryRepository>(
+      () => CategoryRepository(categoryApi: getIt()),
+    )
+    ..registerLazySingleton<IColorRepository>(
+      () => ColorRepository(colorHive: getIt()),
+    )
+    ..registerFactory<JokeCubit>(JokeCubit.new)
+    ..registerFactory<JokeRandomCubit>(
+      () => JokeRandomCubit(jokeRepository: getIt()),
+    )
+    ..registerFactory<JokeByCategoryCubit>(
+      () => JokeByCategoryCubit(jokeRepository: getIt()),
+    )
+    ..registerFactory<JokeFavoriteCubit>(
+      () => JokeFavoriteCubit(jokeRepository: getIt()),
+    )
+    ..registerFactory<FavoriteCubit>(
+      () => FavoriteCubit(jokeRepository: getIt()),
+    )
+    ..registerFactory<ColorCubit>(() => ColorCubit(colorRepository: getIt()))
+    ..registerFactory<CategoryCubit>(
+      () => CategoryCubit(categoryRepository: getIt()),
+    );
 }

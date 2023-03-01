@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'joke_model.dart';
 
@@ -12,22 +12,7 @@ part of 'joke_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$JokeModelTearOff {
-  const _$JokeModelTearOff();
-
-  _JokeModel call({required String id, required String value}) {
-    return _JokeModel(
-      id: id,
-      value: value,
-    );
-  }
-}
-
-/// @nodoc
-const $JokeModel = _$JokeModelTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$JokeModel {
@@ -42,65 +27,70 @@ mixin _$JokeModel {
 /// @nodoc
 abstract class $JokeModelCopyWith<$Res> {
   factory $JokeModelCopyWith(JokeModel value, $Res Function(JokeModel) then) =
-      _$JokeModelCopyWithImpl<$Res>;
+      _$JokeModelCopyWithImpl<$Res, JokeModel>;
+  @useResult
   $Res call({String id, String value});
 }
 
 /// @nodoc
-class _$JokeModelCopyWithImpl<$Res> implements $JokeModelCopyWith<$Res> {
+class _$JokeModelCopyWithImpl<$Res, $Val extends JokeModel>
+    implements $JokeModelCopyWith<$Res> {
   _$JokeModelCopyWithImpl(this._value, this._then);
 
-  final JokeModel _value;
   // ignore: unused_field
-  final $Res Function(JokeModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? value = freezed,
+    Object? id = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$JokeModelCopyWith<$Res> implements $JokeModelCopyWith<$Res> {
-  factory _$JokeModelCopyWith(
-          _JokeModel value, $Res Function(_JokeModel) then) =
-      __$JokeModelCopyWithImpl<$Res>;
+abstract class _$$_JokeModelCopyWith<$Res> implements $JokeModelCopyWith<$Res> {
+  factory _$$_JokeModelCopyWith(
+          _$_JokeModel value, $Res Function(_$_JokeModel) then) =
+      __$$_JokeModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, String value});
 }
 
 /// @nodoc
-class __$JokeModelCopyWithImpl<$Res> extends _$JokeModelCopyWithImpl<$Res>
-    implements _$JokeModelCopyWith<$Res> {
-  __$JokeModelCopyWithImpl(_JokeModel _value, $Res Function(_JokeModel) _then)
-      : super(_value, (v) => _then(v as _JokeModel));
+class __$$_JokeModelCopyWithImpl<$Res>
+    extends _$JokeModelCopyWithImpl<$Res, _$_JokeModel>
+    implements _$$_JokeModelCopyWith<$Res> {
+  __$$_JokeModelCopyWithImpl(
+      _$_JokeModel _value, $Res Function(_$_JokeModel) _then)
+      : super(_value, _then);
 
-  @override
-  _JokeModel get _value => super._value as _JokeModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? value = freezed,
+    Object? id = null,
+    Object? value = null,
   }) {
-    return _then(_JokeModel(
-      id: id == freezed
+    return _then(_$_JokeModel(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
@@ -127,26 +117,24 @@ class _$_JokeModel extends _JokeModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _JokeModel &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.value, value));
+            other is _$_JokeModel &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(runtimeType, id, value);
 
   @JsonKey(ignore: true)
   @override
-  _$JokeModelCopyWith<_JokeModel> get copyWith =>
-      __$JokeModelCopyWithImpl<_JokeModel>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_JokeModelCopyWith<_$_JokeModel> get copyWith =>
+      __$$_JokeModelCopyWithImpl<_$_JokeModel>(this, _$identity);
 }
 
 abstract class _JokeModel extends JokeModel {
-  const factory _JokeModel({required String id, required String value}) =
-      _$_JokeModel;
+  const factory _JokeModel(
+      {required final String id, required final String value}) = _$_JokeModel;
   const _JokeModel._() : super._();
 
   @override
@@ -155,6 +143,6 @@ abstract class _JokeModel extends JokeModel {
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$JokeModelCopyWith<_JokeModel> get copyWith =>
+  _$$_JokeModelCopyWith<_$_JokeModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

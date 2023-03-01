@@ -1,7 +1,7 @@
 part of '../category_page.dart';
 
 class CategoryLoading extends StatelessWidget {
-  const CategoryLoading({Key? key}) : super(key: key);
+  const CategoryLoading({super.key});
 
   @override
   Widget build(BuildContext context) {
