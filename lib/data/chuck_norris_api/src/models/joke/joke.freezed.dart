@@ -104,9 +104,8 @@ class __$$_JokeCopyWithImpl<$Res> extends _$JokeCopyWithImpl<$Res, _$_Joke>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 0)
-class _$_Joke extends _Joke {
-  _$_Joke({@HiveField(0) required this.id, @HiveField(1) required this.value})
-      : super._();
+class _$_Joke implements _Joke {
+  _$_Joke({@HiveField(0) required this.id, @HiveField(1) required this.value});
 
   factory _$_Joke.fromJson(Map<String, dynamic> json) => _$$_JokeFromJson(json);
 
@@ -149,11 +148,10 @@ class _$_Joke extends _Joke {
   }
 }
 
-abstract class _Joke extends Joke {
+abstract class _Joke implements Joke {
   factory _Joke(
       {@HiveField(0) required final String id,
       @HiveField(1) required final String value}) = _$_Joke;
-  _Joke._() : super._();
 
   factory _Joke.fromJson(Map<String, dynamic> json) = _$_Joke.fromJson;
 

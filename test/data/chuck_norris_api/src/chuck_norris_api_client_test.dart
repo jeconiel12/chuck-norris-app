@@ -30,7 +30,7 @@ void main() {
 
       final expectedResponse = JokeResponse(
         joke: Joke(
-          id: '0',
+          id: 'o0sukejatqchi7oyjms6mw',
           value: 'Something funny',
         ),
       );
@@ -44,20 +44,20 @@ void main() {
         );
       });
 
-      test('sends get request', () async {
-        await chuckNorrisApiClient.getRandomJoke();
+      test('sends get request', () {
+        chuckNorrisApiClient.getRandomJoke();
 
         verify(() => httpClient.get(uri)).called(1);
       });
 
-      test('returns JokeResponse when request succeeds', () {
+      test('returns joke when request succeeds', () {
         expect(
           chuckNorrisApiClient.getRandomJoke(),
-          completion(equals(expectedResponse)),
+          completion(equals(expectedResponse.joke)),
         );
       });
 
-      test('throws Exception when request status code not 200', () {
+      test('throws exception when request status not ok', () {
         when(() => httpClient.get(any())).thenAnswer(
           (_) async => http.Response(
             'failed response',
@@ -79,7 +79,7 @@ void main() {
 
       final expectedResponse = JokeResponse(
         joke: Joke(
-          id: '0',
+          id: 'o0sukejatqchi7oyjms6mw',
           value: 'Something funny',
         ),
       );
@@ -93,20 +93,20 @@ void main() {
         );
       });
 
-      test('sends get request', () async {
-        await chuckNorrisApiClient.getJokeByCategory(category);
+      test('sends get request', () {
+        chuckNorrisApiClient.getJokeByCategory(category);
 
         verify(() => httpClient.get(uri)).called(1);
       });
 
-      test('returns JokeResponse when request succeeds', () {
+      test('returns joke when request succeeds', () {
         expect(
           chuckNorrisApiClient.getJokeByCategory(category),
-          completion(equals(expectedResponse)),
+          completion(equals(expectedResponse.joke)),
         );
       });
 
-      test('throws Exception when request status code not 200', () {
+      test('throws exception when request status not ok', () {
         when(() => httpClient.get(any())).thenAnswer(
           (_) async => http.Response(
             'failed response',
@@ -135,20 +135,20 @@ void main() {
         );
       });
 
-      test('sends get request', () async {
-        await chuckNorrisApiClient.getCategories();
+      test('sends get request', () {
+        chuckNorrisApiClient.getCategories();
 
         verify(() => httpClient.get(uri)).called(1);
       });
 
-      test('returns JokeResponse when request succeeds', () {
+      test('returns categories when request succeeds', () {
         expect(
           chuckNorrisApiClient.getCategories(),
           completion(equals(expectedResponse)),
         );
       });
 
-      test('throws Exception when request status code not 200', () {
+      test('throws exception when request status not ok', () {
         when(() => httpClient.get(any())).thenAnswer(
           (_) async => http.Response(
             'failed response',
