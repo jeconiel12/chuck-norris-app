@@ -17,7 +17,7 @@ class ChuckNorrisApiClient {
   @visibleForTesting
   static const String baseUrl = 'https://api.chucknorris.io/jokes';
 
-  Future<JokeResponse> getRandomJoke() async {
+  Future<Joke> getRandomJoke() async {
     final uri = Uri.parse('$baseUrl/random');
     final response = await _httpClient.get(uri);
 
@@ -25,10 +25,10 @@ class ChuckNorrisApiClient {
       throw Exception();
     }
 
-    return JokeResponse.fromJson(response.json());
+    return JokeResponse.fromJson(response.json()).joke;
   }
 
-  Future<JokeResponse> getJokeByCategory(String category) async {
+  Future<Joke> getJokeByCategory(String category) async {
     final uri = Uri.parse('$baseUrl/random?category=$category');
     final response = await _httpClient.get(uri);
 
@@ -36,7 +36,7 @@ class ChuckNorrisApiClient {
       throw Exception();
     }
 
-    return JokeResponse.fromJson(response.json());
+    return JokeResponse.fromJson(response.json()).joke;
   }
 
   Future<List<String>> getCategories() async {

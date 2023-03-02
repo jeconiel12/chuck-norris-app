@@ -12,7 +12,7 @@ class Joke with _$Joke {
     @HiveField(1) required String value,
   }) = _Joke;
 
-  const Joke._();
+  factory Joke.empty() => Joke(id: '', value: '');
 
   factory Joke.fromJson(Map<String, dynamic> json) => _$JokeFromJson(json);
 }
