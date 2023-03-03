@@ -1,12 +1,12 @@
-import 'package:chuck_norris_joke/application/category/category_cubit.dart';
-import 'package:chuck_norris_joke/domain/category/category_model.dart';
-import 'package:chuck_norris_joke/di/injection.dart';
-import 'package:chuck_norris_joke/presentation/theme/theme.dart';
-
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:chuck_norris_joke/application/category/category_cubit.dart';
+import 'package:chuck_norris_joke/di/injection.dart';
+import 'package:chuck_norris_joke/presentation/theme/theme.dart';
 
 part 'widget/category_body.dart';
 part 'widget/category_error.dart';

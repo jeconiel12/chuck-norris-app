@@ -2,10 +2,9 @@ part of 'joke_random_cubit.dart';
 
 @freezed
 class JokeRandomState with _$JokeRandomState {
-
   const factory JokeRandomState({
-    required JokeModel joke,
-    required Option<FailureModel> failureOption,
+    required Joke joke,
+    required Option<Failure> failureOption,
     required bool isLoading,
   }) = _JokeRandomState;
   const JokeRandomState._();
@@ -14,7 +13,7 @@ class JokeRandomState with _$JokeRandomState {
     return JokeRandomState(
       failureOption: none(),
       isLoading: true,
-      joke: JokeModel.empty(),
+      joke: Joke.empty(),
     );
   }
 

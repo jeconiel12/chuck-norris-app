@@ -3,8 +3,8 @@ part of 'joke_favorite_cubit.dart';
 @freezed
 class JokeFavoriteState with _$JokeFavoriteState {
   const factory JokeFavoriteState({
-    required List<JokeModel> jokes,
-    required Option<FailureModel> failureOption,
+    required List<Joke> jokes,
+    required Option<Failure> failureOption,
   }) = _JokeFavoriteState;
 
   const JokeFavoriteState._();

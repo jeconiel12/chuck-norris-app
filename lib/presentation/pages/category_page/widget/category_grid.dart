@@ -6,7 +6,7 @@ class CategoryGrid extends StatelessWidget {
     super.key,
   });
 
-  final List<CategoryModel> categories;
+  final List<String> categories;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class CategoryCard extends StatelessWidget {
     required this.category,
     super.key,
   });
-  final CategoryModel category;
+  final String category;
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +55,10 @@ class CategoryCard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset('assets/icons/${category.value}.svg'),
+              SvgPicture.asset('assets/icons/$category.svg'),
               const SizedBox(height: 10),
               Text(
-                '${category.value.substring(0, 1).toUpperCase()}${category.value.substring(1)}', // ignore: lines_longer_than_80_chars
+                '${category.substring(0, 1).toUpperCase()}${category.substring(1)}', // ignore: lines_longer_than_80_chars
                 style: ThemeText.body1,
               )
             ],

@@ -3,9 +3,9 @@ part of 'category_cubit.dart';
 @freezed
 class CategoryState with _$CategoryState {
   const factory CategoryState({
-    required List<CategoryModel> categories,
+    required List<String> categories,
     required bool isLoading,
-    required Option<FailureModel> failureOption,
+    required Option<Failure> failureOption,
   }) = _CategoryState;
 
   const CategoryState._();

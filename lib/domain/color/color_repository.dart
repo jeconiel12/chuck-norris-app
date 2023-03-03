@@ -7,8 +7,8 @@ import 'package:chuck_norris_joke/domain/domain.dart';
 @lazySingleton
 class ColorRepository {
   ColorRepository({
-    ColorLocalStorage? colorLocal,
-  }) : _colorLocal = colorLocal ?? ColorLocalStorage();
+    required ColorLocalStorage colorLocal,
+  }) : _colorLocal = colorLocal;
 
   final ColorLocalStorage _colorLocal;
 
@@ -16,7 +16,7 @@ class ColorRepository {
     try {
       final colorCode = _colorLocal.getColorCode();
       return right(colorCode);
-    } on Exception {
+    } catch (_) {
       return const Left(Failure.database());
     }
   }
@@ -25,7 +25,7 @@ class ColorRepository {
     try {
       await _colorLocal.saveColor(colorCode);
       return const Right(unit);
-    } on Exception {
+    } catch (_) {
       return const Left(Failure.database());
     }
   }

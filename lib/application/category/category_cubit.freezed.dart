@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CategoryState {
-  List<CategoryModel> get categories => throw _privateConstructorUsedError;
+  List<String> get categories => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
-  Option<FailureModel> get failureOption => throw _privateConstructorUsedError;
+  Option<Failure> get failureOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CategoryStateCopyWith<CategoryState> get copyWith =>
@@ -32,9 +32,7 @@ abstract class $CategoryStateCopyWith<$Res> {
       _$CategoryStateCopyWithImpl<$Res, CategoryState>;
   @useResult
   $Res call(
-      {List<CategoryModel> categories,
-      bool isLoading,
-      Option<FailureModel> failureOption});
+      {List<String> categories, bool isLoading, Option<Failure> failureOption});
 }
 
 /// @nodoc
@@ -58,7 +56,7 @@ class _$CategoryStateCopyWithImpl<$Res, $Val extends CategoryState>
       categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<CategoryModel>,
+              as List<String>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -66,7 +64,7 @@ class _$CategoryStateCopyWithImpl<$Res, $Val extends CategoryState>
       failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<FailureModel>,
+              as Option<Failure>,
     ) as $Val);
   }
 }
@@ -80,9 +78,7 @@ abstract class _$$_CategoryStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<CategoryModel> categories,
-      bool isLoading,
-      Option<FailureModel> failureOption});
+      {List<String> categories, bool isLoading, Option<Failure> failureOption});
 }
 
 /// @nodoc
@@ -104,7 +100,7 @@ class __$$_CategoryStateCopyWithImpl<$Res>
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<CategoryModel>,
+              as List<String>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -112,7 +108,7 @@ class __$$_CategoryStateCopyWithImpl<$Res>
       failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<FailureModel>,
+              as Option<Failure>,
     ));
   }
 }
@@ -121,15 +117,15 @@ class __$$_CategoryStateCopyWithImpl<$Res>
 
 class _$_CategoryState extends _CategoryState {
   const _$_CategoryState(
-      {required final List<CategoryModel> categories,
+      {required final List<String> categories,
       required this.isLoading,
       required this.failureOption})
       : _categories = categories,
         super._();
 
-  final List<CategoryModel> _categories;
+  final List<String> _categories;
   @override
-  List<CategoryModel> get categories {
+  List<String> get categories {
     if (_categories is EqualUnmodifiableListView) return _categories;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_categories);
@@ -138,7 +134,7 @@ class _$_CategoryState extends _CategoryState {
   @override
   final bool isLoading;
   @override
-  final Option<FailureModel> failureOption;
+  final Option<Failure> failureOption;
 
   @override
   String toString() {
@@ -174,17 +170,17 @@ class _$_CategoryState extends _CategoryState {
 
 abstract class _CategoryState extends CategoryState {
   const factory _CategoryState(
-      {required final List<CategoryModel> categories,
+      {required final List<String> categories,
       required final bool isLoading,
-      required final Option<FailureModel> failureOption}) = _$_CategoryState;
+      required final Option<Failure> failureOption}) = _$_CategoryState;
   const _CategoryState._() : super._();
 
   @override
-  List<CategoryModel> get categories;
+  List<String> get categories;
   @override
   bool get isLoading;
   @override
-  Option<FailureModel> get failureOption;
+  Option<Failure> get failureOption;
   @override
   @JsonKey(ignore: true)
   _$$_CategoryStateCopyWith<_$_CategoryState> get copyWith =>
