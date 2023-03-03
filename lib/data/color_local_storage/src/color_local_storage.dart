@@ -2,14 +2,17 @@ import 'package:hive/hive.dart';
 
 class ColorLocalStorage {
   ColorLocalStorage({
-    Box<String>? colorBox,
-  }) : _colorBox = colorBox ?? Hive.box('colorBox');
+    Box<int>? colorBox,
+  }) : _colorBox = colorBox ?? Hive.box(colorBoxName);
 
-  final Box<String> _colorBox;
+  static const String colorBoxName = 'COLOR_BOX';
+  static const String colorKey = 'COLOR_CODE';
 
-  Future<void> saveColor(String color) async {
-    await _colorBox.put('colorCode', color);
+  final Box<int> _colorBox;
+
+  Future<void> saveColor(int colorCode) async {
+    await _colorBox.put(colorKey, colorCode);
   }
 
-  String? getColor() => _colorBox.get('colorCode');
+  int? getColorCode() => _colorBox.get(colorKey);
 }

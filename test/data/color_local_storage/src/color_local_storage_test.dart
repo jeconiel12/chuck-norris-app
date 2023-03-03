@@ -4,14 +4,15 @@ import 'package:mocktail/mocktail.dart';
 
 import 'package:chuck_norris_joke/data/data.dart';
 
-class MockColorBox extends Mock implements Box<String> {}
+class MockColorBox extends Mock implements Box<int> {}
 
 void main() {
   group('ColorLocalStorage', () {
     late ColorLocalStorage colorLocalStorage;
-    late Box<String> colorBox;
+    late Box<int> colorBox;
 
-    const colorCode = '0xFFFFFFFF';
+    const colorKey = ColorLocalStorage.colorKey;
+    const colorCode = 0xFFFFFFFF;
 
     setUp(() {
       colorBox = MockColorBox();
@@ -26,7 +27,7 @@ void main() {
       test('calls color box put method', () {
         colorLocalStorage.saveColor(colorCode);
 
-        verify(() => colorBox.put('colorCode', colorCode)).called(1);
+        verify(() => colorBox.put(colorKey, colorCode)).called(1);
       });
 
       test('saves color code to color box when put succeeds', () {
@@ -43,14 +44,14 @@ void main() {
       });
 
       test('calls color box get method', () {
-        colorLocalStorage.getColor();
+        colorLocalStorage.getColorCode();
 
-        verify(() => colorBox.get('colorCode')).called(1);
+        verify(() => colorBox.get(colorKey)).called(1);
       });
 
       test('returns color code when get succeeds', () {
         expect(
-          colorLocalStorage.getColor(),
+          colorLocalStorage.getColorCode(),
           equals(colorCode),
         );
       });
