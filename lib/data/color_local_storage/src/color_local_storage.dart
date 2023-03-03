@@ -1,9 +1,11 @@
 import 'package:hive/hive.dart';
+import 'package:injectable/injectable.dart';
 
+@lazySingleton
 class ColorLocalStorage {
   ColorLocalStorage({
-    Box<int>? colorBox,
-  }) : _colorBox = colorBox ?? Hive.box(colorBoxName);
+    required Box<int> colorBox,
+  }) : _colorBox = colorBox;
 
   static const String colorBoxName = 'COLOR_BOX';
   static const String colorKey = 'COLOR_CODE';

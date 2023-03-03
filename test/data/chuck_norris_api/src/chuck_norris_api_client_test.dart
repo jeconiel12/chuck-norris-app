@@ -28,11 +28,9 @@ void main() {
     group('getRandomJoke', () {
       final uri = Uri.parse('$baseUrl/random');
 
-      final expectedResponse = JokeResponse(
-        joke: Joke(
-          id: 'o0sukejatqchi7oyjms6mw',
-          value: 'Something funny',
-        ),
+      final expectedResponse = Joke(
+        id: 'o0sukejatqchi7oyjms6mw',
+        value: 'Something funny',
       );
 
       setUp(() {
@@ -53,7 +51,7 @@ void main() {
       test('returns joke when request succeeds', () {
         expect(
           chuckNorrisApiClient.getRandomJoke(),
-          completion(equals(expectedResponse.joke)),
+          completion(equals(expectedResponse)),
         );
       });
 
@@ -77,11 +75,9 @@ void main() {
 
       final uri = Uri.parse('$baseUrl/random?category=$category');
 
-      final expectedResponse = JokeResponse(
-        joke: Joke(
-          id: 'o0sukejatqchi7oyjms6mw',
-          value: 'Something funny',
-        ),
+      final expectedResponse = Joke(
+        id: 'o0sukejatqchi7oyjms6mw',
+        value: 'Something funny',
       );
 
       setUp(() {
@@ -102,7 +98,7 @@ void main() {
       test('returns joke when request succeeds', () {
         expect(
           chuckNorrisApiClient.getJokeByCategory(category),
-          completion(equals(expectedResponse.joke)),
+          completion(equals(expectedResponse)),
         );
       });
 

@@ -4,13 +4,15 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
-import 'package:chuck_norris_joke/data/chuck_norris_api/chuck_norris_api.dart';
+import 'package:chuck_norris_joke/data/data.dart';
 
+@singleton
 class ChuckNorrisApiClient {
   ChuckNorrisApiClient({
-    http.Client? httpClient,
-  }) : _httpClient = httpClient ?? http.Client();
+    required http.Client httpClient,
+  }) : _httpClient = httpClient;
 
   final http.Client _httpClient;
 
@@ -24,8 +26,7 @@ class ChuckNorrisApiClient {
     if (response.statusCode != HttpStatus.ok) {
       throw Exception();
     }
-
-    return JokeResponse.fromJson(response.json()).joke;
+    return Joke.fromJson(response.json());
   }
 
   Future<Joke> getJokeByCategory(String category) async {
@@ -36,7 +37,7 @@ class ChuckNorrisApiClient {
       throw Exception();
     }
 
-    return JokeResponse.fromJson(response.json()).joke;
+    return Joke.fromJson(response.json());
   }
 
   Future<List<String>> getCategories() async {
