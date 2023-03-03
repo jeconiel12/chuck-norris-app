@@ -5,7 +5,9 @@ import 'package:chuck_norris_joke/data/data.dart';
 class JokeLocalStorage {
   JokeLocalStorage({
     Box<Joke>? jokeBox,
-  }) : _jokeBox = jokeBox ?? Hive.box('jokeBox');
+  }) : _jokeBox = jokeBox ?? Hive.box(jokeBoxName);
+
+  static const String jokeBoxName = 'JOKE_BOX';
 
   final Box<Joke> _jokeBox;
 
