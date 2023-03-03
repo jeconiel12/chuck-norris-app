@@ -2,6 +2,7 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
 import 'package:chuck_norris_joke/domain/core/failure_model.dart';
 import 'package:chuck_norris_joke/domain/joke/i_joke_repository.dart';
@@ -10,6 +11,7 @@ import 'package:chuck_norris_joke/infrastructure/joke/joke_api.dart';
 import 'package:chuck_norris_joke/infrastructure/joke/joke_dto.dart';
 import 'package:chuck_norris_joke/infrastructure/joke/joke_hive.dart';
 
+@LazySingleton(as: IJokeRepository)
 class JokeRepository implements IJokeRepository {
   const JokeRepository({
     required this.jokeApi,

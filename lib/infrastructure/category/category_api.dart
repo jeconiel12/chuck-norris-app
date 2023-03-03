@@ -1,10 +1,12 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
 import 'package:chuck_norris_joke/domain/category/category_model.dart';
 import 'package:chuck_norris_joke/infrastructure/category/category_dto.dart';
 
+@lazySingleton
 class CategoryApi {
   const CategoryApi();
 

@@ -1,6 +1,6 @@
 import 'package:chuck_norris_joke/application/category/category_cubit.dart';
 import 'package:chuck_norris_joke/domain/category/category_model.dart';
-import 'package:chuck_norris_joke/get_it.dart';
+import 'package:chuck_norris_joke/di/injection.dart';
 import 'package:chuck_norris_joke/presentation/theme/theme.dart';
 
 import 'package:flutter/material.dart';

@@ -1,10 +1,12 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 
 import 'package:chuck_norris_joke/domain/joke/joke_model.dart';
 import 'package:chuck_norris_joke/infrastructure/joke/joke_dto.dart';
 
+@lazySingleton
 class JokeApi {
   const JokeApi();
 
