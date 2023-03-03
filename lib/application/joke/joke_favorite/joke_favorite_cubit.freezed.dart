@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$JokeFavoriteState {
-  List<JokeModel> get jokes => throw _privateConstructorUsedError;
-  Option<FailureModel> get failureOption => throw _privateConstructorUsedError;
+  List<Joke> get jokes => throw _privateConstructorUsedError;
+  Option<Failure> get failureOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $JokeFavoriteStateCopyWith<JokeFavoriteState> get copyWith =>
@@ -30,7 +30,7 @@ abstract class $JokeFavoriteStateCopyWith<$Res> {
           JokeFavoriteState value, $Res Function(JokeFavoriteState) then) =
       _$JokeFavoriteStateCopyWithImpl<$Res, JokeFavoriteState>;
   @useResult
-  $Res call({List<JokeModel> jokes, Option<FailureModel> failureOption});
+  $Res call({List<Joke> jokes, Option<Failure> failureOption});
 }
 
 /// @nodoc
@@ -53,11 +53,11 @@ class _$JokeFavoriteStateCopyWithImpl<$Res, $Val extends JokeFavoriteState>
       jokes: null == jokes
           ? _value.jokes
           : jokes // ignore: cast_nullable_to_non_nullable
-              as List<JokeModel>,
+              as List<Joke>,
       failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<FailureModel>,
+              as Option<Failure>,
     ) as $Val);
   }
 }
@@ -70,7 +70,7 @@ abstract class _$$_JokeFavoriteStateCopyWith<$Res>
       __$$_JokeFavoriteStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<JokeModel> jokes, Option<FailureModel> failureOption});
+  $Res call({List<Joke> jokes, Option<Failure> failureOption});
 }
 
 /// @nodoc
@@ -91,11 +91,11 @@ class __$$_JokeFavoriteStateCopyWithImpl<$Res>
       jokes: null == jokes
           ? _value._jokes
           : jokes // ignore: cast_nullable_to_non_nullable
-              as List<JokeModel>,
+              as List<Joke>,
       failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<FailureModel>,
+              as Option<Failure>,
     ));
   }
 }
@@ -104,20 +104,20 @@ class __$$_JokeFavoriteStateCopyWithImpl<$Res>
 
 class _$_JokeFavoriteState extends _JokeFavoriteState {
   const _$_JokeFavoriteState(
-      {required final List<JokeModel> jokes, required this.failureOption})
+      {required final List<Joke> jokes, required this.failureOption})
       : _jokes = jokes,
         super._();
 
-  final List<JokeModel> _jokes;
+  final List<Joke> _jokes;
   @override
-  List<JokeModel> get jokes {
+  List<Joke> get jokes {
     if (_jokes is EqualUnmodifiableListView) return _jokes;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_jokes);
   }
 
   @override
-  final Option<FailureModel> failureOption;
+  final Option<Failure> failureOption;
 
   @override
   String toString() {
@@ -148,15 +148,14 @@ class _$_JokeFavoriteState extends _JokeFavoriteState {
 
 abstract class _JokeFavoriteState extends JokeFavoriteState {
   const factory _JokeFavoriteState(
-          {required final List<JokeModel> jokes,
-          required final Option<FailureModel> failureOption}) =
-      _$_JokeFavoriteState;
+      {required final List<Joke> jokes,
+      required final Option<Failure> failureOption}) = _$_JokeFavoriteState;
   const _JokeFavoriteState._() : super._();
 
   @override
-  List<JokeModel> get jokes;
+  List<Joke> get jokes;
   @override
-  Option<FailureModel> get failureOption;
+  Option<Failure> get failureOption;
   @override
   @JsonKey(ignore: true)
   _$$_JokeFavoriteStateCopyWith<_$_JokeFavoriteState> get copyWith =>

@@ -7,4 +7,4 @@ import 'package:chuck_norris_joke/di/di.dart';
 final GetIt getIt = GetIt.instance;
 
 @injectableInit
-void configureInjection() => getIt.init();
+Future<void> configureInjection() => getIt.init();

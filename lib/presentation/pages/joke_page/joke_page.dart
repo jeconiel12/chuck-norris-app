@@ -10,8 +10,7 @@ import 'package:chuck_norris_joke/application/joke/joke_by_category/joke_by_cate
 import 'package:chuck_norris_joke/application/joke/joke_cubit.dart';
 import 'package:chuck_norris_joke/application/joke/joke_favorite/joke_favorite_cubit.dart';
 import 'package:chuck_norris_joke/application/joke/joke_random/joke_random_cubit.dart';
-import 'package:chuck_norris_joke/domain/category/category_model.dart';
-import 'package:chuck_norris_joke/domain/joke/joke_model.dart';
+import 'package:chuck_norris_joke/data/data.dart';
 import 'package:chuck_norris_joke/di/injection.dart';
 import 'package:chuck_norris_joke/presentation/helper/share_screenshot.dart';
 import 'package:chuck_norris_joke/presentation/pages/category_page/category_page.dart';

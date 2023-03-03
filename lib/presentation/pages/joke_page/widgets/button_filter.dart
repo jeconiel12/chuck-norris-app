@@ -37,8 +37,7 @@ class ButtonFilter extends StatelessWidget {
                   random: () => 'All Jokes',
                   favorite: () => 'My Favorites',
                   category: (category) {
-                    final text = category.value;
-                    return 'Category: ${text.substring(0, 1).toUpperCase()}${text.substring(1)}'; // ignore: lines_longer_than_80_chars
+                    return 'Category: ${category.substring(0, 1).toUpperCase()}${category.substring(1)}'; // ignore: lines_longer_than_80_chars
                   },
                 ),
                 style: ThemeText.body1.copyWith(
@@ -83,7 +82,7 @@ class CategoryDialog extends StatelessWidget {
           ),
           _buildOption(
             onTap: () async {
-              final category = await Navigator.push<CategoryModel>(
+              final category = await Navigator.push<String>(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const CategoryPage(),

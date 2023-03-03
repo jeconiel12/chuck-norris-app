@@ -3,9 +3,9 @@ part of 'joke_by_category_cubit.dart';
 @freezed
 class JokeByCategoryState with _$JokeByCategoryState {
   const factory JokeByCategoryState({
-    required JokeModel joke,
+    required Joke joke,
     required bool isLoading,
-    required Option<FailureModel> failureOption,
+    required Option<Failure> failureOption,
   }) = _JokeByCategoryState;
 
   const JokeByCategoryState._();
@@ -14,7 +14,7 @@ class JokeByCategoryState with _$JokeByCategoryState {
     return JokeByCategoryState(
       failureOption: none(),
       isLoading: false,
-      joke: JokeModel.empty(),
+      joke: Joke.empty(),
     );
   }
 

@@ -9,10 +9,10 @@ import 'package:chuck_norris_joke/domain/domain.dart';
 @lazySingleton
 class JokeRepository {
   JokeRepository({
-    ChuckNorrisApiClient? jokeApi,
-    JokeLocalStorage? jokeLocal,
-  })  : _jokeApi = jokeApi ?? ChuckNorrisApiClient(),
-        _jokeLocal = jokeLocal ?? JokeLocalStorage();
+    required ChuckNorrisApiClient jokeApi,
+    required JokeLocalStorage jokeLocal,
+  })  : _jokeApi = jokeApi,
+        _jokeLocal = jokeLocal;
 
   final ChuckNorrisApiClient _jokeApi;
   final JokeLocalStorage _jokeLocal;
@@ -23,7 +23,7 @@ class JokeRepository {
       return right(joke);
     } on SocketException {
       return left(const Failure.network());
-    } on Exception {
+    } catch (_) {
       return left(const Failure.api());
     }
   }
@@ -34,7 +34,7 @@ class JokeRepository {
       return right(joke);
     } on SocketException {
       return left(const Failure.network());
-    } on Exception {
+    } catch (_) {
       return left(const Failure.api());
     }
   }
@@ -43,7 +43,7 @@ class JokeRepository {
     try {
       final isJokeFavorite = _jokeLocal.checkIfJokeFavorite(jokeId);
       return right(isJokeFavorite);
-    } on Exception {
+    } catch (_) {
       return left(const Failure.database());
     }
   }
@@ -52,7 +52,7 @@ class JokeRepository {
     try {
       await _jokeLocal.deleteFavoriteJoke(jokeId);
       return right(unit);
-    } on Exception {
+    } catch (_) {
       return left(const Failure.database());
     }
   }
@@ -61,7 +61,7 @@ class JokeRepository {
     try {
       final jokes = _jokeLocal.getFavoriteJokes();
       return right(jokes);
-    } on Exception {
+    } catch (_) {
       return left(const Failure.database());
     }
   }
@@ -70,7 +70,7 @@ class JokeRepository {
     try {
       await _jokeLocal.saveFavoriteJoke(joke);
       return right(unit);
-    } on Exception {
+    } catch (_) {
       return left(const Failure.database());
     }
   }

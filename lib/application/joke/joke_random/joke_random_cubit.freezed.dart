@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$JokeRandomState {
-  JokeModel get joke => throw _privateConstructorUsedError;
-  Option<FailureModel> get failureOption => throw _privateConstructorUsedError;
+  Joke get joke => throw _privateConstructorUsedError;
+  Option<Failure> get failureOption => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -31,10 +31,9 @@ abstract class $JokeRandomStateCopyWith<$Res> {
           JokeRandomState value, $Res Function(JokeRandomState) then) =
       _$JokeRandomStateCopyWithImpl<$Res, JokeRandomState>;
   @useResult
-  $Res call(
-      {JokeModel joke, Option<FailureModel> failureOption, bool isLoading});
+  $Res call({Joke joke, Option<Failure> failureOption, bool isLoading});
 
-  $JokeModelCopyWith<$Res> get joke;
+  $JokeCopyWith<$Res> get joke;
 }
 
 /// @nodoc
@@ -58,11 +57,11 @@ class _$JokeRandomStateCopyWithImpl<$Res, $Val extends JokeRandomState>
       joke: null == joke
           ? _value.joke
           : joke // ignore: cast_nullable_to_non_nullable
-              as JokeModel,
+              as Joke,
       failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<FailureModel>,
+              as Option<Failure>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -72,8 +71,8 @@ class _$JokeRandomStateCopyWithImpl<$Res, $Val extends JokeRandomState>
 
   @override
   @pragma('vm:prefer-inline')
-  $JokeModelCopyWith<$Res> get joke {
-    return $JokeModelCopyWith<$Res>(_value.joke, (value) {
+  $JokeCopyWith<$Res> get joke {
+    return $JokeCopyWith<$Res>(_value.joke, (value) {
       return _then(_value.copyWith(joke: value) as $Val);
     });
   }
@@ -87,11 +86,10 @@ abstract class _$$_JokeRandomStateCopyWith<$Res>
       __$$_JokeRandomStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {JokeModel joke, Option<FailureModel> failureOption, bool isLoading});
+  $Res call({Joke joke, Option<Failure> failureOption, bool isLoading});
 
   @override
-  $JokeModelCopyWith<$Res> get joke;
+  $JokeCopyWith<$Res> get joke;
 }
 
 /// @nodoc
@@ -113,11 +111,11 @@ class __$$_JokeRandomStateCopyWithImpl<$Res>
       joke: null == joke
           ? _value.joke
           : joke // ignore: cast_nullable_to_non_nullable
-              as JokeModel,
+              as Joke,
       failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<FailureModel>,
+              as Option<Failure>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -136,9 +134,9 @@ class _$_JokeRandomState extends _JokeRandomState {
       : super._();
 
   @override
-  final JokeModel joke;
+  final Joke joke;
   @override
-  final Option<FailureModel> failureOption;
+  final Option<Failure> failureOption;
   @override
   final bool isLoading;
 
@@ -171,15 +169,15 @@ class _$_JokeRandomState extends _JokeRandomState {
 
 abstract class _JokeRandomState extends JokeRandomState {
   const factory _JokeRandomState(
-      {required final JokeModel joke,
-      required final Option<FailureModel> failureOption,
+      {required final Joke joke,
+      required final Option<Failure> failureOption,
       required final bool isLoading}) = _$_JokeRandomState;
   const _JokeRandomState._() : super._();
 
   @override
-  JokeModel get joke;
+  Joke get joke;
   @override
-  Option<FailureModel> get failureOption;
+  Option<Failure> get failureOption;
   @override
   bool get isLoading;
   @override

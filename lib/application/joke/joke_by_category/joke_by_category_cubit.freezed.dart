@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$JokeByCategoryState {
-  JokeModel get joke => throw _privateConstructorUsedError;
+  Joke get joke => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
-  Option<FailureModel> get failureOption => throw _privateConstructorUsedError;
+  Option<Failure> get failureOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $JokeByCategoryStateCopyWith<JokeByCategoryState> get copyWith =>
@@ -31,10 +31,9 @@ abstract class $JokeByCategoryStateCopyWith<$Res> {
           JokeByCategoryState value, $Res Function(JokeByCategoryState) then) =
       _$JokeByCategoryStateCopyWithImpl<$Res, JokeByCategoryState>;
   @useResult
-  $Res call(
-      {JokeModel joke, bool isLoading, Option<FailureModel> failureOption});
+  $Res call({Joke joke, bool isLoading, Option<Failure> failureOption});
 
-  $JokeModelCopyWith<$Res> get joke;
+  $JokeCopyWith<$Res> get joke;
 }
 
 /// @nodoc
@@ -58,7 +57,7 @@ class _$JokeByCategoryStateCopyWithImpl<$Res, $Val extends JokeByCategoryState>
       joke: null == joke
           ? _value.joke
           : joke // ignore: cast_nullable_to_non_nullable
-              as JokeModel,
+              as Joke,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -66,14 +65,14 @@ class _$JokeByCategoryStateCopyWithImpl<$Res, $Val extends JokeByCategoryState>
       failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<FailureModel>,
+              as Option<Failure>,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $JokeModelCopyWith<$Res> get joke {
-    return $JokeModelCopyWith<$Res>(_value.joke, (value) {
+  $JokeCopyWith<$Res> get joke {
+    return $JokeCopyWith<$Res>(_value.joke, (value) {
       return _then(_value.copyWith(joke: value) as $Val);
     });
   }
@@ -87,11 +86,10 @@ abstract class _$$_JokeByCategoryStateCopyWith<$Res>
       __$$_JokeByCategoryStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {JokeModel joke, bool isLoading, Option<FailureModel> failureOption});
+  $Res call({Joke joke, bool isLoading, Option<Failure> failureOption});
 
   @override
-  $JokeModelCopyWith<$Res> get joke;
+  $JokeCopyWith<$Res> get joke;
 }
 
 /// @nodoc
@@ -113,7 +111,7 @@ class __$$_JokeByCategoryStateCopyWithImpl<$Res>
       joke: null == joke
           ? _value.joke
           : joke // ignore: cast_nullable_to_non_nullable
-              as JokeModel,
+              as Joke,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -121,7 +119,7 @@ class __$$_JokeByCategoryStateCopyWithImpl<$Res>
       failureOption: null == failureOption
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<FailureModel>,
+              as Option<Failure>,
     ));
   }
 }
@@ -136,11 +134,11 @@ class _$_JokeByCategoryState extends _JokeByCategoryState {
       : super._();
 
   @override
-  final JokeModel joke;
+  final Joke joke;
   @override
   final bool isLoading;
   @override
-  final Option<FailureModel> failureOption;
+  final Option<Failure> failureOption;
 
   @override
   String toString() {
@@ -172,18 +170,17 @@ class _$_JokeByCategoryState extends _JokeByCategoryState {
 
 abstract class _JokeByCategoryState extends JokeByCategoryState {
   const factory _JokeByCategoryState(
-          {required final JokeModel joke,
-          required final bool isLoading,
-          required final Option<FailureModel> failureOption}) =
-      _$_JokeByCategoryState;
+      {required final Joke joke,
+      required final bool isLoading,
+      required final Option<Failure> failureOption}) = _$_JokeByCategoryState;
   const _JokeByCategoryState._() : super._();
 
   @override
-  JokeModel get joke;
+  Joke get joke;
   @override
   bool get isLoading;
   @override
-  Option<FailureModel> get failureOption;
+  Option<Failure> get failureOption;
   @override
   @JsonKey(ignore: true)
   _$$_JokeByCategoryStateCopyWith<_$_JokeByCategoryState> get copyWith =>

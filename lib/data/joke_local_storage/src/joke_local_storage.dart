@@ -1,11 +1,13 @@
 import 'package:hive/hive.dart';
+import 'package:injectable/injectable.dart';
 
 import 'package:chuck_norris_joke/data/data.dart';
 
+@lazySingleton
 class JokeLocalStorage {
   JokeLocalStorage({
-    Box<Joke>? jokeBox,
-  }) : _jokeBox = jokeBox ?? Hive.box(jokeBoxName);
+    required Box<Joke> jokeBox,
+  }) : _jokeBox = jokeBox;
 
   static const String jokeBoxName = 'JOKE_BOX';
 

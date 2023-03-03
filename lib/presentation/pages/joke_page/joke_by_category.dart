@@ -6,7 +6,7 @@ class JokeByCategory extends StatefulWidget {
     super.key,
   });
 
-  final CategoryModel category;
+  final String category;
 
   @override
   State<JokeByCategory> createState() => _JokeByCategoryState();

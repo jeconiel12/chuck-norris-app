@@ -55,7 +55,7 @@ class JokeView extends StatelessWidget {
     super.key,
   });
 
-  final JokeModel joke;
+  final Joke joke;
 
   @override
   Widget build(BuildContext context) {
