@@ -1,12 +1,14 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
 import 'package:chuck_norris_joke/domain/category/category_model.dart';
 import 'package:chuck_norris_joke/domain/category/i_category_repository.dart';
 import 'package:chuck_norris_joke/domain/core/failure_model.dart';
 import 'package:chuck_norris_joke/infrastructure/category/category_api.dart';
 
+@LazySingleton(as: ICategoryRepository)
 class CategoryRepository implements ICategoryRepository {
   CategoryRepository({
     required this.categoryApi,

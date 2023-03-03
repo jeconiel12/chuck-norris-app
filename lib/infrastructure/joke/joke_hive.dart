@@ -1,7 +1,9 @@
 import 'package:hive/hive.dart';
+import 'package:injectable/injectable.dart';
 
 import 'package:chuck_norris_joke/infrastructure/joke/joke_table.dart';
 
+@lazySingleton
 class JokeHive {
   const JokeHive();
 

@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 import 'package:chuck_norris_joke/domain/category/category_model.dart';
 import 'package:chuck_norris_joke/domain/core/failure_model.dart';
@@ -10,6 +11,7 @@ import 'package:chuck_norris_joke/domain/joke/joke_model.dart';
 part 'joke_by_category_state.dart';
 part 'joke_by_category_cubit.freezed.dart';
 
+@injectable
 class JokeByCategoryCubit extends Cubit<JokeByCategoryState> {
   JokeByCategoryCubit({
     required this.jokeRepository,
