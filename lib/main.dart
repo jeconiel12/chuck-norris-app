@@ -7,11 +7,10 @@ import 'package:chuck_norris_joke/di/di.dart' as di;
 import 'package:chuck_norris_joke/presentation/core/chuck_norris_joke_app.dart';
 
 void main() async {
-  await setup();
-  runApp(const ChuckNorrisJokeApp());
+  await setup(const ChuckNorrisJokeApp());
 }
 
-Future<void> setup() async {
+Future<void> setup(Widget app) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Initialize hive
@@ -20,4 +19,6 @@ Future<void> setup() async {
 
   // Dependency injection
   await di.configureInjection();
+
+  runApp(app);
 }
