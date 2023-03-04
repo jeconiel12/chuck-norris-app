@@ -42,7 +42,7 @@ void main() {
         );
       });
 
-      test('sends get request', () {
+      test('sends httpClient.get request', () {
         chuckNorrisApiClient.getRandomJoke();
 
         verify(() => httpClient.get(uri)).called(1);
@@ -89,7 +89,7 @@ void main() {
         );
       });
 
-      test('sends get request', () {
+      test('sends httpClient.get request', () {
         chuckNorrisApiClient.getJokeByCategory(category);
 
         verify(() => httpClient.get(uri)).called(1);
@@ -131,7 +131,7 @@ void main() {
         );
       });
 
-      test('sends get request', () {
+      test('sends httpClient.get request', () {
         chuckNorrisApiClient.getCategories();
 
         verify(() => httpClient.get(uri)).called(1);

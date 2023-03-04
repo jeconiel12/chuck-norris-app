@@ -1,2 +1,2 @@
 export 'failure.dart';
-export 'repo_result.dart';
+export 'result.dart';

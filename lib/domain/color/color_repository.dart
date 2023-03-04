@@ -12,7 +12,7 @@ class ColorRepository {
 
   final ColorLocalStorage _colorLocal;
 
-  FutureResult<int?> getColorCode() async {
+  Result<int?> getColorCode() {
     try {
       final colorCode = _colorLocal.getColorCode();
       return right(colorCode);
@@ -23,7 +23,7 @@ class ColorRepository {
 
   FutureResult<Unit> saveColorCode(int colorCode) async {
     try {
-      await _colorLocal.saveColor(colorCode);
+      await _colorLocal.saveColorCode(colorCode);
       return right(unit);
     } catch (_) {
       return left(const Failure.database());
