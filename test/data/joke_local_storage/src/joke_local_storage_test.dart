@@ -27,13 +27,13 @@ void main() {
         when(() => jokeBox.containsKey(any<String>())).thenAnswer((_) => true);
       });
 
-      test('calls joke box containsKey method', () {
+      test('calls jokeBox.containsKey', () {
         jokeLocalStorage.checkIfJokeFavorite(jokeId);
 
         verify(() => jokeBox.containsKey(jokeId)).called(1);
       });
 
-      test('returns containsKey value when succeeds', () {
+      test('returns jokeBox.containsKey value when succeeds', () {
         expect(
           jokeLocalStorage.checkIfJokeFavorite(jokeId),
           equals(true),
@@ -48,7 +48,7 @@ void main() {
         when(() => jokeBox.delete(any<String>())).thenAnswer((_) async {});
       });
 
-      test('calls joke box delete method', () {
+      test('calls jokeBox.delete', () {
         jokeLocalStorage.deleteFavoriteJoke(jokeId);
 
         verify(() => jokeBox.delete(jokeId)).called(1);
@@ -72,7 +72,7 @@ void main() {
         when(() => jokeBox.put(any<String>(), any())).thenAnswer((_) async {});
       });
 
-      test('calls joke box put method', () {
+      test('calls jokeBox.put', () {
         jokeLocalStorage.saveFavoriteJoke(joke);
 
         verify(() => jokeBox.put(joke.id, joke)).called(1);
@@ -86,7 +86,7 @@ void main() {
       });
     });
 
-    test('getFavoriteJokes returns joke box values', () {
+    test('getFavoriteJokes returns all jokeBox values', () {
       final jokes = [
         Joke(
           id: 'o0sukejatqchi7oyjms6mw',
@@ -102,7 +102,7 @@ void main() {
 
       expect(
         jokeLocalStorage.getFavoriteJokes(),
-        jokes,
+        equals(jokes),
       );
     });
   });

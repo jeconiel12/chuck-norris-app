@@ -19,20 +19,20 @@ void main() {
       colorLocalStorage = ColorLocalStorage(colorBox: colorBox);
     });
 
-    group('saveColor', () {
+    group('saveColorCode', () {
       setUp(() {
         when(() => colorBox.put(any<String>(), any())).thenAnswer((_) async {});
       });
 
-      test('calls color box put method', () {
-        colorLocalStorage.saveColor(colorCode);
+      test('calls colorBox.put', () {
+        colorLocalStorage.saveColorCode(colorCode);
 
         verify(() => colorBox.put(colorKey, colorCode)).called(1);
       });
 
-      test('saves color code to color box when put succeeds', () {
+      test('saves color code to colorBox when succeeds', () {
         expect(
-          colorLocalStorage.saveColor(colorCode),
+          colorLocalStorage.saveColorCode(colorCode),
           completes,
         );
       });
@@ -43,13 +43,13 @@ void main() {
         when(() => colorBox.get(any<String>())).thenAnswer((_) => colorCode);
       });
 
-      test('calls color box get method', () {
+      test('calls colorBox.get', () {
         colorLocalStorage.getColorCode();
 
         verify(() => colorBox.get(colorKey)).called(1);
       });
 
-      test('returns color code when get succeeds', () {
+      test('returns color code when succeeds', () {
         expect(
           colorLocalStorage.getColorCode(),
           equals(colorCode),

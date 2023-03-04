@@ -12,7 +12,7 @@ class ColorLocalStorage {
 
   final Box<int> _colorBox;
 
-  Future<void> saveColor(int colorCode) async {
+  Future<void> saveColorCode(int colorCode) async {
     await _colorBox.put(colorKey, colorCode);
   }
 
