@@ -17,7 +17,7 @@ class JokeRepository {
   final ChuckNorrisApiClient _jokeApi;
   final JokeLocalStorage _jokeLocal;
 
-  RepoResult<Joke> getRandomJoke() async {
+  FutureResult<Joke> getRandomJoke() async {
     try {
       final joke = await _jokeApi.getRandomJoke();
       return right(joke);
@@ -28,7 +28,7 @@ class JokeRepository {
     }
   }
 
-  RepoResult<Joke> getJokeByCategory(String category) async {
+  FutureResult<Joke> getJokeByCategory(String category) async {
     try {
       final joke = await _jokeApi.getJokeByCategory(category);
       return right(joke);
@@ -39,7 +39,7 @@ class JokeRepository {
     }
   }
 
-  RepoResult<bool> checkIfJokeFavorite(String jokeId) async {
+  Result<bool> checkIfJokeFavorite(String jokeId) {
     try {
       final isJokeFavorite = _jokeLocal.checkIfJokeFavorite(jokeId);
       return right(isJokeFavorite);
@@ -48,7 +48,7 @@ class JokeRepository {
     }
   }
 
-  RepoResult<Unit> deleteFavoriteJoke(String jokeId) async {
+  FutureResult<Unit> deleteFavoriteJoke(String jokeId) async {
     try {
       await _jokeLocal.deleteFavoriteJoke(jokeId);
       return right(unit);
@@ -57,7 +57,7 @@ class JokeRepository {
     }
   }
 
-  RepoResult<List<Joke>> getFavoriteJokes() async {
+  Result<List<Joke>> getFavoriteJokes() {
     try {
       final jokes = _jokeLocal.getFavoriteJokes();
       return right(jokes);
@@ -66,7 +66,7 @@ class JokeRepository {
     }
   }
 
-  RepoResult<Unit> saveFavoriteJoke(Joke joke) async {
+  FutureResult<Unit> saveFavoriteJoke(Joke joke) async {
     try {
       await _jokeLocal.saveFavoriteJoke(joke);
       return right(unit);

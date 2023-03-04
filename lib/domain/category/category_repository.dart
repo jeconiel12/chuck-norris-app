@@ -14,14 +14,14 @@ class CategoryRepository {
 
   final ChuckNorrisApiClient _jokeApi;
 
-  RepoResult<List<String>> getCategories() async {
+  FutureResult<List<String>> getCategories() async {
     try {
       final categories = await _jokeApi.getCategories();
       return right(categories);
     } on SocketException {
-      return const Left(Failure.network());
+      return left(const Failure.network());
     } catch (_) {
-      return const Left(Failure.api());
+      return left(const Failure.api());
     }
   }
 }

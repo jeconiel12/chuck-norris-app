@@ -12,21 +12,21 @@ class ColorRepository {
 
   final ColorLocalStorage _colorLocal;
 
-  RepoResult<int?> getColorCode() async {
+  FutureResult<int?> getColorCode() async {
     try {
       final colorCode = _colorLocal.getColorCode();
       return right(colorCode);
     } catch (_) {
-      return const Left(Failure.database());
+      return left(const Failure.database());
     }
   }
 
-  Future<Either<Failure, Unit>> saveColorCode(int colorCode) async {
+  FutureResult<Unit> saveColorCode(int colorCode) async {
     try {
       await _colorLocal.saveColor(colorCode);
-      return const Right(unit);
+      return right(unit);
     } catch (_) {
-      return const Left(Failure.database());
+      return left(const Failure.database());
     }
   }
 }
