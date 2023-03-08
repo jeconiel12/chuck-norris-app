@@ -17,20 +17,9 @@ class JokeRepository {
   final ChuckNorrisApiClient _jokeApi;
   final JokeLocalStorage _jokeLocal;
 
-  FutureResult<Joke> getRandomJoke() async {
+  FutureResult<Joke> getRandomJoke([String? category]) async {
     try {
-      final joke = await _jokeApi.getRandomJoke();
-      return right(joke);
-    } on SocketException {
-      return left(const Failure.network());
-    } catch (_) {
-      return left(const Failure.api());
-    }
-  }
-
-  FutureResult<Joke> getJokeByCategory(String category) async {
-    try {
-      final joke = await _jokeApi.getJokeByCategory(category);
+      final joke = await _jokeApi.getRandomJoke(category);
       return right(joke);
     } on SocketException {
       return left(const Failure.network());
