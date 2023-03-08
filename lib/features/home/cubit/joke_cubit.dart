@@ -1,0 +1,27 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
+
+part 'joke_state.dart';
+part 'joke_cubit.freezed.dart';
+
+enum JokeType { random, favorite, category }
+
+@injectable
+class JokeCubit extends Cubit<JokeState> {
+  JokeCubit() : super(const JokeState.random());
+
+  void changeFilter(JokeType type, {String? category}) {
+    switch (type) {
+      case JokeType.random:
+        emit(const JokeState.random());
+        break;
+      case JokeType.favorite:
+        emit(const JokeState.favorite());
+        break;
+      case JokeType.category:
+        emit(JokeState.category(category: category!));
+        break;
+    }
+  }
+}

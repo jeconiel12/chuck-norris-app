@@ -96,8 +96,8 @@ class __$$_NetworkCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Network implements _Network {
-  const _$_Network();
+class _$_Network extends _Network {
+  const _$_Network() : super._();
 
   @override
   String toString() {
@@ -182,8 +182,9 @@ class _$_Network implements _Network {
   }
 }
 
-abstract class _Network implements Failure {
+abstract class _Network extends Failure {
   const factory _Network() = _$_Network;
+  const _Network._() : super._();
 }
 
 /// @nodoc
@@ -201,8 +202,8 @@ class __$$_ApiCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res, _$_Api>
 
 /// @nodoc
 
-class _$_Api implements _Api {
-  const _$_Api();
+class _$_Api extends _Api {
+  const _$_Api() : super._();
 
   @override
   String toString() {
@@ -287,8 +288,9 @@ class _$_Api implements _Api {
   }
 }
 
-abstract class _Api implements Failure {
+abstract class _Api extends Failure {
   const factory _Api() = _$_Api;
+  const _Api._() : super._();
 }
 
 /// @nodoc
@@ -309,8 +311,8 @@ class __$$_DatabaseCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Database implements _Database {
-  const _$_Database();
+class _$_Database extends _Database {
+  const _$_Database() : super._();
 
   @override
   String toString() {
@@ -395,6 +397,7 @@ class _$_Database implements _Database {
   }
 }
 
-abstract class _Database implements Failure {
+abstract class _Database extends Failure {
   const factory _Database() = _$_Database;
+  const _Database._() : super._();
 }

@@ -5,18 +5,6 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:chuck_norris_joke/application/category/category_cubit.dart'
-    as _i19;
-import 'package:chuck_norris_joke/application/color/color_cubit.dart' as _i11;
-import 'package:chuck_norris_joke/application/joke/favorite/favorite_cubit.dart'
-    as _i15;
-import 'package:chuck_norris_joke/application/joke/joke_by_category/joke_by_category_cubit.dart'
-    as _i16;
-import 'package:chuck_norris_joke/application/joke/joke_cubit.dart' as _i8;
-import 'package:chuck_norris_joke/application/joke/joke_favorite/joke_favorite_cubit.dart'
-    as _i17;
-import 'package:chuck_norris_joke/application/joke/joke_random/joke_random_cubit.dart'
-    as _i18;
 import 'package:chuck_norris_joke/data/chuck_norris_api/src/chuck_norris_api_client.dart'
     as _i10;
 import 'package:chuck_norris_joke/data/color_local_storage/src/color_local_storage.dart'
@@ -24,13 +12,24 @@ import 'package:chuck_norris_joke/data/color_local_storage/src/color_local_stora
 import 'package:chuck_norris_joke/data/data.dart' as _i4;
 import 'package:chuck_norris_joke/data/joke_local_storage/src/joke_local_storage.dart'
     as _i9;
-import 'package:chuck_norris_joke/di/modules/box.module.dart' as _i21;
-import 'package:chuck_norris_joke/di/modules/http.module.dart' as _i20;
+import 'package:chuck_norris_joke/di/modules/box.module.dart' as _i20;
+import 'package:chuck_norris_joke/di/modules/http.module.dart' as _i19;
 import 'package:chuck_norris_joke/domain/category/category_repository.dart'
-    as _i14;
+    as _i15;
 import 'package:chuck_norris_joke/domain/color/color_repository.dart' as _i7;
 import 'package:chuck_norris_joke/domain/domain.dart' as _i12;
 import 'package:chuck_norris_joke/domain/joke/joke_repository.dart' as _i13;
+import 'package:chuck_norris_joke/features/category/cubit/category_cubit.dart'
+    as _i18;
+import 'package:chuck_norris_joke/features/color/cubit/color_cubit.dart'
+    as _i11;
+import 'package:chuck_norris_joke/features/favorite/cubit/favorite_cubit.dart'
+    as _i16;
+import 'package:chuck_norris_joke/features/favorite_jokes/cubit/favorite_jokes_cubit.dart'
+    as _i17;
+import 'package:chuck_norris_joke/features/home/cubit/joke_cubit.dart' as _i8;
+import 'package:chuck_norris_joke/features/random_joke/cubit/random_joke_cubit.dart'
+    as _i14;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:hive/hive.dart' as _i3;
 import 'package:http/http.dart' as _i5;
@@ -75,22 +74,20 @@ extension GetItInjectableX on _i1.GetIt {
           jokeApi: gh<_i4.ChuckNorrisApiClient>(),
           jokeLocal: gh<_i4.JokeLocalStorage>(),
         ));
-    gh.lazySingleton<_i14.CategoryRepository>(
-        () => _i14.CategoryRepository(jokeApi: gh<_i4.ChuckNorrisApiClient>()));
-    gh.factory<_i15.FavoriteCubit>(
-        () => _i15.FavoriteCubit(jokeRepository: gh<_i12.JokeRepository>()));
-    gh.factory<_i16.JokeByCategoryCubit>(() =>
-        _i16.JokeByCategoryCubit(jokeRepository: gh<_i12.JokeRepository>()));
-    gh.factory<_i17.JokeFavoriteCubit>(() =>
-        _i17.JokeFavoriteCubit(jokeRepository: gh<_i12.JokeRepository>()));
-    gh.factory<_i18.JokeRandomCubit>(
-        () => _i18.JokeRandomCubit(jokeRepository: gh<_i12.JokeRepository>()));
-    gh.factory<_i19.CategoryCubit>(() =>
-        _i19.CategoryCubit(categoryRepository: gh<_i12.CategoryRepository>()));
+    gh.factory<_i14.RandomJokeCubit>(
+        () => _i14.RandomJokeCubit(jokeRepository: gh<_i12.JokeRepository>()));
+    gh.lazySingleton<_i15.CategoryRepository>(
+        () => _i15.CategoryRepository(jokeApi: gh<_i4.ChuckNorrisApiClient>()));
+    gh.factory<_i16.FavoriteCubit>(
+        () => _i16.FavoriteCubit(jokeRepository: gh<_i12.JokeRepository>()));
+    gh.factory<_i17.FavoriteJokesCubit>(() =>
+        _i17.FavoriteJokesCubit(jokeRepository: gh<_i12.JokeRepository>()));
+    gh.factory<_i18.CategoryCubit>(() =>
+        _i18.CategoryCubit(categoryRepository: gh<_i12.CategoryRepository>()));
     return this;
   }
 }
 
-class _$HttpModule extends _i20.HttpModule {}
+class _$HttpModule extends _i19.HttpModule {}
 
-class _$BoxModule extends _i21.BoxModule {}
+class _$BoxModule extends _i20.BoxModule {}
