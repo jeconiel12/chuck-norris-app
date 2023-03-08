@@ -17,31 +17,23 @@ class ChuckNorrisApiClient {
   final http.Client _httpClient;
 
   @visibleForTesting
-  static const String baseUrl = 'https://api.chucknorris.io/jokes';
+  static const String baseUrl = 'api.chucknorris.io';
 
-  Future<Joke> getRandomJoke() async {
-    final uri = Uri.parse('$baseUrl/random');
+  Future<Joke> getRandomJoke([String? category]) async {
+    final uri = Uri.https(baseUrl, '/jokes/random', {
+      if (category != null) 'category': category,
+    });
+
     final response = await _httpClient.get(uri);
 
     if (response.statusCode != HttpStatus.ok) {
       throw Exception();
     }
-    return Joke.fromJson(response.json());
-  }
-
-  Future<Joke> getJokeByCategory(String category) async {
-    final uri = Uri.parse('$baseUrl/random?category=$category');
-    final response = await _httpClient.get(uri);
-
-    if (response.statusCode != HttpStatus.ok) {
-      throw Exception();
-    }
-
     return Joke.fromJson(response.json());
   }
 
   Future<List<String>> getCategories() async {
-    final uri = Uri.parse('$baseUrl/categories');
+    final uri = Uri.https(baseUrl, '/jokes/categories');
     final response = await _httpClient.get(uri);
 
     if (response.statusCode != HttpStatus.ok) {
