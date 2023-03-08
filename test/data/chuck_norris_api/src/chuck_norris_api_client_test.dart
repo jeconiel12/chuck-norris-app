@@ -26,7 +26,7 @@ void main() {
     });
 
     group('getRandomJoke', () {
-      final uri = Uri.parse('$baseUrl/random');
+      late Uri uri;
 
       final expectedResponse = Joke(
         id: 'o0sukejatqchi7oyjms6mw',
@@ -40,6 +40,8 @@ void main() {
             HttpStatus.ok,
           ),
         );
+
+        uri = Uri.https(baseUrl, '/jokes/random', {});
       });
 
       test('sends httpClient.get request', () {
@@ -48,56 +50,21 @@ void main() {
         verify(() => httpClient.get(uri)).called(1);
       });
 
-      test('returns joke when request succeeds', () {
-        expect(
-          chuckNorrisApiClient.getRandomJoke(),
-          completion(equals(expectedResponse)),
-        );
-      });
+      test('sends httpClient.get request with query params', () {
+        const category = 'animal';
 
-      test('throws exception when request status not ok', () {
-        when(() => httpClient.get(any())).thenAnswer(
-          (_) async => http.Response(
-            'failed response',
-            HttpStatus.badRequest,
-          ),
-        );
+        uri = Uri.https(baseUrl, '/jokes/random', {
+          'category': category,
+        });
 
-        expect(
-          chuckNorrisApiClient.getRandomJoke(),
-          throwsA(isA<Exception>()),
-        );
-      });
-    });
-
-    group('getJokeByCategory', () {
-      const category = 'animal';
-
-      final uri = Uri.parse('$baseUrl/random?category=$category');
-
-      final expectedResponse = Joke(
-        id: 'o0sukejatqchi7oyjms6mw',
-        value: 'Something funny',
-      );
-
-      setUp(() {
-        when(() => httpClient.get(any())).thenAnswer(
-          (_) async => http.Response(
-            jsonEncode(expectedResponse),
-            HttpStatus.ok,
-          ),
-        );
-      });
-
-      test('sends httpClient.get request', () {
-        chuckNorrisApiClient.getJokeByCategory(category);
+        chuckNorrisApiClient.getRandomJoke(category);
 
         verify(() => httpClient.get(uri)).called(1);
       });
 
       test('returns joke when request succeeds', () {
         expect(
-          chuckNorrisApiClient.getJokeByCategory(category),
+          chuckNorrisApiClient.getRandomJoke(),
           completion(equals(expectedResponse)),
         );
       });
@@ -111,14 +78,14 @@ void main() {
         );
 
         expect(
-          chuckNorrisApiClient.getJokeByCategory(category),
+          chuckNorrisApiClient.getRandomJoke(),
           throwsA(isA<Exception>()),
         );
       });
     });
 
     group('getCategories', () {
-      final uri = Uri.parse('$baseUrl/categories');
+      final uri = Uri.https(baseUrl, '/jokes/categories');
 
       final expectedResponse = ['animal', 'comedy', 'crime'];
 

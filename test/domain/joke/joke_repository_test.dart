@@ -35,13 +35,21 @@ void main() {
       );
 
       setUp(() {
-        when(() => jokeApi.getRandomJoke()).thenAnswer((_) async => joke);
+        when(() => jokeApi.getRandomJoke(any())).thenAnswer((_) async => joke);
       });
 
       test('calls jokeApi.getRandomJoke', () {
         jokeRepository.getRandomJoke();
 
         verify(() => jokeApi.getRandomJoke()).called(1);
+      });
+
+      test('calls jokeApi.getRandomJoke with category', () {
+        const category = 'animal';
+
+        jokeRepository.getRandomJoke(category);
+
+        verify(() => jokeApi.getRandomJoke(category)).called(1);
       });
 
       test('returns joke when succeeds', () async {
@@ -61,47 +69,6 @@ void main() {
         when(() => jokeApi.getRandomJoke()).thenThrow(Exception('Ouch'));
 
         final result = await jokeRepository.getRandomJoke();
-        expect(result.fetchLeft(), equals(const Failure.api()));
-      });
-    });
-
-    group('getJokeByCategory', () {
-      const category = 'animal';
-
-      final joke = Joke(
-        id: 'o0sukejatqchi7oyjms6mw',
-        value: 'Something funny',
-      );
-
-      setUp(() {
-        when(() => jokeApi.getJokeByCategory(any()))
-            .thenAnswer((_) async => joke);
-      });
-
-      test('calls jokeApi.getJokeByCategory', () {
-        jokeRepository.getJokeByCategory(category);
-
-        verify(() => jokeApi.getJokeByCategory(category)).called(1);
-      });
-
-      test('returns joke when succeeds', () async {
-        final result = await jokeRepository.getJokeByCategory(category);
-        expect(result.fetchRight(), equals(joke));
-      });
-
-      test('returns Failure.network when SocketException caught', () async {
-        when(() => jokeApi.getJokeByCategory(any()))
-            .thenThrow(const SocketException('Ouch'));
-
-        final result = await jokeRepository.getJokeByCategory(category);
-        expect(result.fetchLeft(), equals(const Failure.network()));
-      });
-
-      test('returns Failure.api when Exception caught', () async {
-        when(() => jokeApi.getJokeByCategory(any()))
-            .thenThrow(Exception('Ouch'));
-
-        final result = await jokeRepository.getJokeByCategory(category);
         expect(result.fetchLeft(), equals(const Failure.api()));
       });
     });
