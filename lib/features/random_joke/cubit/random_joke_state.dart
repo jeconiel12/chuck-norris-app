@@ -6,7 +6,9 @@ class RandomJokeState with _$RandomJokeState {
     required Joke joke,
     required Option<Failure> failureOption,
     required bool isLoading,
+    String? category,
   }) = _RandomJokeState;
+
   const RandomJokeState._();
 
   factory RandomJokeState.initial() {
@@ -16,9 +18,4 @@ class RandomJokeState with _$RandomJokeState {
       joke: Joke.empty(),
     );
   }
-
-  bool get showColorButton => !isLoading;
-  bool get showFilterButton => !isLoading;
-  bool get showFavoriteButton => !isLoading && failureOption.isNone();
-  bool get showShareButton => !isLoading && failureOption.isNone();
 }

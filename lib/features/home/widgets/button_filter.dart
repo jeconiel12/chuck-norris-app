@@ -40,11 +40,10 @@ class ButtonFilter extends StatelessWidget {
             builder: (context, state) {
               return Text(
                 state.when(
-                  random: () => 'All Jokes',
+                  random: (category) => category != null
+                      ? 'Category: ${category.capitalizeFirstLetter()}'
+                      : 'Random Joke',
                   favorite: () => 'My Favorites',
-                  category: (category) {
-                    return 'Category: ${category.capitalizeFirstLetter()}';
-                  },
                 ),
                 style: ThemeText.body1.copyWith(
                   color: ThemeColor.white,
@@ -76,7 +75,7 @@ class CategoryDialog extends StatelessWidget {
               Navigator.pop(context);
             },
             leading: SvgPicture.asset('assets/icons/Infinity.svg'),
-            title: 'All Jokes',
+            title: 'Random Joke',
           ),
           _buildOption(
             onTap: () {
@@ -98,7 +97,7 @@ class CategoryDialog extends StatelessWidget {
                 // ignore: use_build_context_synchronously
                 context
                     .read<JokeCubit>()
-                    .changeFilter(JokeType.category, category: category);
+                    .changeFilter(JokeType.random, category: category);
               }
               // ignore: use_build_context_synchronously
               Navigator.pop(context);

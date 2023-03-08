@@ -16,9 +16,9 @@ class RandomJokeCubit extends Cubit<RandomJokeState> {
   }) : super(RandomJokeState.initial());
   final JokeRepository jokeRepository;
 
-  Future<void> getRandomJoke() async {
-    emit(state.copyWith(isLoading: true));
-    final response = await jokeRepository.getRandomJoke();
+  Future<void> getRandomJoke([String? category]) async {
+    emit(state.copyWith(isLoading: true, category: category));
+    final response = await jokeRepository.getRandomJoke(category);
     response.fold(
       (failure) => emit(
         state.copyWith(
@@ -33,6 +33,7 @@ class RandomJokeCubit extends Cubit<RandomJokeState> {
         ),
       ),
     );
+
     emit(state.copyWith(isLoading: false));
   }
 }

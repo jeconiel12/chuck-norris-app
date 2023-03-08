@@ -19,6 +19,7 @@ mixin _$RandomJokeState {
   Joke get joke => throw _privateConstructorUsedError;
   Option<Failure> get failureOption => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  String? get category => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RandomJokeStateCopyWith<RandomJokeState> get copyWith =>
@@ -31,7 +32,11 @@ abstract class $RandomJokeStateCopyWith<$Res> {
           RandomJokeState value, $Res Function(RandomJokeState) then) =
       _$RandomJokeStateCopyWithImpl<$Res, RandomJokeState>;
   @useResult
-  $Res call({Joke joke, Option<Failure> failureOption, bool isLoading});
+  $Res call(
+      {Joke joke,
+      Option<Failure> failureOption,
+      bool isLoading,
+      String? category});
 
   $JokeCopyWith<$Res> get joke;
 }
@@ -52,6 +57,7 @@ class _$RandomJokeStateCopyWithImpl<$Res, $Val extends RandomJokeState>
     Object? joke = null,
     Object? failureOption = null,
     Object? isLoading = null,
+    Object? category = freezed,
   }) {
     return _then(_value.copyWith(
       joke: null == joke
@@ -66,6 +72,10 @@ class _$RandomJokeStateCopyWithImpl<$Res, $Val extends RandomJokeState>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -86,7 +96,11 @@ abstract class _$$_RandomJokeStateCopyWith<$Res>
       __$$_RandomJokeStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Joke joke, Option<Failure> failureOption, bool isLoading});
+  $Res call(
+      {Joke joke,
+      Option<Failure> failureOption,
+      bool isLoading,
+      String? category});
 
   @override
   $JokeCopyWith<$Res> get joke;
@@ -106,6 +120,7 @@ class __$$_RandomJokeStateCopyWithImpl<$Res>
     Object? joke = null,
     Object? failureOption = null,
     Object? isLoading = null,
+    Object? category = freezed,
   }) {
     return _then(_$_RandomJokeState(
       joke: null == joke
@@ -120,6 +135,10 @@ class __$$_RandomJokeStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -130,7 +149,8 @@ class _$_RandomJokeState extends _RandomJokeState {
   const _$_RandomJokeState(
       {required this.joke,
       required this.failureOption,
-      required this.isLoading})
+      required this.isLoading,
+      this.category})
       : super._();
 
   @override
@@ -139,10 +159,12 @@ class _$_RandomJokeState extends _RandomJokeState {
   final Option<Failure> failureOption;
   @override
   final bool isLoading;
+  @override
+  final String? category;
 
   @override
   String toString() {
-    return 'RandomJokeState(joke: $joke, failureOption: $failureOption, isLoading: $isLoading)';
+    return 'RandomJokeState(joke: $joke, failureOption: $failureOption, isLoading: $isLoading, category: $category)';
   }
 
   @override
@@ -154,11 +176,14 @@ class _$_RandomJokeState extends _RandomJokeState {
             (identical(other.failureOption, failureOption) ||
                 other.failureOption == failureOption) &&
             (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading));
+                other.isLoading == isLoading) &&
+            (identical(other.category, category) ||
+                other.category == category));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, joke, failureOption, isLoading);
+  int get hashCode =>
+      Object.hash(runtimeType, joke, failureOption, isLoading, category);
 
   @JsonKey(ignore: true)
   @override
@@ -171,7 +196,8 @@ abstract class _RandomJokeState extends RandomJokeState {
   const factory _RandomJokeState(
       {required final Joke joke,
       required final Option<Failure> failureOption,
-      required final bool isLoading}) = _$_RandomJokeState;
+      required final bool isLoading,
+      final String? category}) = _$_RandomJokeState;
   const _RandomJokeState._() : super._();
 
   @override
@@ -180,6 +206,8 @@ abstract class _RandomJokeState extends RandomJokeState {
   Option<Failure> get failureOption;
   @override
   bool get isLoading;
+  @override
+  String? get category;
   @override
   @JsonKey(ignore: true)
   _$$_RandomJokeStateCopyWith<_$_RandomJokeState> get copyWith =>

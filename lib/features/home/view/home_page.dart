@@ -22,10 +22,8 @@ class HomePage extends StatelessWidget {
             buildWhen: (p, c) => p != c,
             builder: (context, state) {
               return state.when(
-                random: () => const RandomJokeWrapper(),
+                random: (category) => RandomJokeWrapper(category: category),
                 favorite: () => const FavoriteJokesWrapper(),
-                // TODO: Combine random & category joke
-                category: (category) => const FavoriteJokesWrapper(),
               );
             },
           ),

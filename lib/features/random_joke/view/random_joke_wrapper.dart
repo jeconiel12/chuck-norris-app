@@ -13,26 +13,53 @@ import 'package:chuck_norris_joke/widgets/widgets.dart';
 part 'parts/random_joke_tools.dart';
 
 class RandomJokeWrapper extends StatelessWidget {
-  const RandomJokeWrapper({super.key});
+  const RandomJokeWrapper({super.key, this.category});
+
+  final String? category;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<RandomJokeCubit>()..getRandomJoke(),
-      child: const RandomJokeView(),
+      create: (_) => getIt<RandomJokeCubit>(),
+      child: RandomJokeView(category: category),
     );
   }
 }
 
-class RandomJokeView extends StatelessWidget {
-  const RandomJokeView({super.key});
+class RandomJokeView extends StatefulWidget {
+  const RandomJokeView({super.key, this.category});
+
+  final String? category;
+
+  @override
+  State<RandomJokeView> createState() => _RandomJokeViewState();
+}
+
+class _RandomJokeViewState extends State<RandomJokeView> {
+  @override
+  void initState() {
+    super.initState();
+    getRandomJoke();
+  }
+
+  @override
+  void didUpdateWidget(RandomJokeView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.category != widget.category) {
+      getRandomJoke();
+    }
+  }
+
+  Future<void> getRandomJoke() async {
+    await context.read<RandomJokeCubit>().getRandomJoke(widget.category);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         JokeRefreshIndicator(
-          onRefresh: context.read<RandomJokeCubit>().getRandomJoke,
+          onRefresh: getRandomJoke,
         ),
         Center(
           child: Padding(
