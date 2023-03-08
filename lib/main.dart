@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 
 import 'package:chuck_norris_joke/data/data.dart';
-import 'package:chuck_norris_joke/di/di.dart' as di;
-import 'package:chuck_norris_joke/presentation/core/chuck_norris_joke_app.dart';
+import 'package:chuck_norris_joke/di/di.dart';
+import 'package:chuck_norris_joke/features/app/app.dart';
 
 void main() async {
-  await setup(const ChuckNorrisJokeApp());
+  await setup(const App());
 }
 
 Future<void> setup(Widget app) async {
@@ -18,7 +18,7 @@ Future<void> setup(Widget app) async {
   Hive.registerAdapter<Joke>(JokeAdapter());
 
   // Dependency injection
-  await di.configureInjection();
+  await configureInjection();
 
   runApp(app);
 }
