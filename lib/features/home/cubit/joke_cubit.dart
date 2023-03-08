@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 part 'joke_state.dart';
 part 'joke_cubit.freezed.dart';
 
-enum JokeType { random, favorite, category }
+enum JokeType { random, favorite }
 
 @injectable
 class JokeCubit extends Cubit<JokeState> {
@@ -14,13 +14,10 @@ class JokeCubit extends Cubit<JokeState> {
   void changeFilter(JokeType type, {String? category}) {
     switch (type) {
       case JokeType.random:
-        emit(const JokeState.random());
+        emit(JokeState.random(category));
         break;
       case JokeType.favorite:
         emit(const JokeState.favorite());
-        break;
-      case JokeType.category:
-        emit(JokeState.category(category: category!));
         break;
     }
   }

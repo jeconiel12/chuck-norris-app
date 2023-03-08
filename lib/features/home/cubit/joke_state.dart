@@ -2,8 +2,6 @@ part of 'joke_cubit.dart';
 
 @freezed
 class JokeState with _$JokeState {
-  const JokeState._();
-  const factory JokeState.random() = _Random;
-  const factory JokeState.category({required String category}) = _Category;
+  const factory JokeState.random([String? category]) = _Random;
   const factory JokeState.favorite() = _Favorite;
 }

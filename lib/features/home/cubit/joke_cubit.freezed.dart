@@ -18,22 +18,19 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$JokeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() random,
-    required TResult Function(String category) category,
+    required TResult Function(String? category) random,
     required TResult Function() favorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? random,
-    TResult? Function(String category)? category,
+    TResult? Function(String? category)? random,
     TResult? Function()? favorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? random,
-    TResult Function(String category)? category,
+    TResult Function(String? category)? random,
     TResult Function()? favorite,
     required TResult orElse(),
   }) =>
@@ -41,21 +38,18 @@ mixin _$JokeState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Random value) random,
-    required TResult Function(_Category value) category,
     required TResult Function(_Favorite value) favorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Random value)? random,
-    TResult? Function(_Category value)? category,
     TResult? Function(_Favorite value)? favorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Random value)? random,
-    TResult Function(_Category value)? category,
     TResult Function(_Favorite value)? favorite,
     required TResult orElse(),
   }) =>
@@ -83,6 +77,8 @@ class _$JokeStateCopyWithImpl<$Res, $Val extends JokeState>
 abstract class _$$_RandomCopyWith<$Res> {
   factory _$$_RandomCopyWith(_$_Random value, $Res Function(_$_Random) then) =
       __$$_RandomCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? category});
 }
 
 /// @nodoc
@@ -91,150 +87,39 @@ class __$$_RandomCopyWithImpl<$Res>
     implements _$$_RandomCopyWith<$Res> {
   __$$_RandomCopyWithImpl(_$_Random _value, $Res Function(_$_Random) _then)
       : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_Random extends _Random {
-  const _$_Random() : super._();
-
-  @override
-  String toString() {
-    return 'JokeState.random()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Random);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() random,
-    required TResult Function(String category) category,
-    required TResult Function() favorite,
-  }) {
-    return random();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? random,
-    TResult? Function(String category)? category,
-    TResult? Function()? favorite,
-  }) {
-    return random?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? random,
-    TResult Function(String category)? category,
-    TResult Function()? favorite,
-    required TResult orElse(),
-  }) {
-    if (random != null) {
-      return random();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Random value) random,
-    required TResult Function(_Category value) category,
-    required TResult Function(_Favorite value) favorite,
-  }) {
-    return random(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Random value)? random,
-    TResult? Function(_Category value)? category,
-    TResult? Function(_Favorite value)? favorite,
-  }) {
-    return random?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Random value)? random,
-    TResult Function(_Category value)? category,
-    TResult Function(_Favorite value)? favorite,
-    required TResult orElse(),
-  }) {
-    if (random != null) {
-      return random(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Random extends JokeState {
-  const factory _Random() = _$_Random;
-  const _Random._() : super._();
-}
-
-/// @nodoc
-abstract class _$$_CategoryCopyWith<$Res> {
-  factory _$$_CategoryCopyWith(
-          _$_Category value, $Res Function(_$_Category) then) =
-      __$$_CategoryCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String category});
-}
-
-/// @nodoc
-class __$$_CategoryCopyWithImpl<$Res>
-    extends _$JokeStateCopyWithImpl<$Res, _$_Category>
-    implements _$$_CategoryCopyWith<$Res> {
-  __$$_CategoryCopyWithImpl(
-      _$_Category _value, $Res Function(_$_Category) _then)
-      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? category = null,
+    Object? category = freezed,
   }) {
-    return _then(_$_Category(
-      category: null == category
+    return _then(_$_Random(
+      freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_Category extends _Category {
-  const _$_Category({required this.category}) : super._();
+class _$_Random implements _Random {
+  const _$_Random([this.category]);
 
   @override
-  final String category;
+  final String? category;
 
   @override
   String toString() {
-    return 'JokeState.category(category: $category)';
+    return 'JokeState.random(category: $category)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Category &&
+            other is _$_Random &&
             (identical(other.category, category) ||
                 other.category == category));
   }
@@ -245,39 +130,36 @@ class _$_Category extends _Category {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CategoryCopyWith<_$_Category> get copyWith =>
-      __$$_CategoryCopyWithImpl<_$_Category>(this, _$identity);
+  _$$_RandomCopyWith<_$_Random> get copyWith =>
+      __$$_RandomCopyWithImpl<_$_Random>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() random,
-    required TResult Function(String category) category,
+    required TResult Function(String? category) random,
     required TResult Function() favorite,
   }) {
-    return category(this.category);
+    return random(category);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? random,
-    TResult? Function(String category)? category,
+    TResult? Function(String? category)? random,
     TResult? Function()? favorite,
   }) {
-    return category?.call(this.category);
+    return random?.call(category);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? random,
-    TResult Function(String category)? category,
+    TResult Function(String? category)? random,
     TResult Function()? favorite,
     required TResult orElse(),
   }) {
-    if (category != null) {
-      return category(this.category);
+    if (random != null) {
+      return random(category);
     }
     return orElse();
   }
@@ -286,44 +168,40 @@ class _$_Category extends _Category {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Random value) random,
-    required TResult Function(_Category value) category,
     required TResult Function(_Favorite value) favorite,
   }) {
-    return category(this);
+    return random(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Random value)? random,
-    TResult? Function(_Category value)? category,
     TResult? Function(_Favorite value)? favorite,
   }) {
-    return category?.call(this);
+    return random?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Random value)? random,
-    TResult Function(_Category value)? category,
     TResult Function(_Favorite value)? favorite,
     required TResult orElse(),
   }) {
-    if (category != null) {
-      return category(this);
+    if (random != null) {
+      return random(this);
     }
     return orElse();
   }
 }
 
-abstract class _Category extends JokeState {
-  const factory _Category({required final String category}) = _$_Category;
-  const _Category._() : super._();
+abstract class _Random implements JokeState {
+  const factory _Random([final String? category]) = _$_Random;
 
-  String get category;
+  String? get category;
   @JsonKey(ignore: true)
-  _$$_CategoryCopyWith<_$_Category> get copyWith =>
+  _$$_RandomCopyWith<_$_Random> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -345,8 +223,8 @@ class __$$_FavoriteCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Favorite extends _Favorite {
-  const _$_Favorite() : super._();
+class _$_Favorite implements _Favorite {
+  const _$_Favorite();
 
   @override
   String toString() {
@@ -365,8 +243,7 @@ class _$_Favorite extends _Favorite {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() random,
-    required TResult Function(String category) category,
+    required TResult Function(String? category) random,
     required TResult Function() favorite,
   }) {
     return favorite();
@@ -375,8 +252,7 @@ class _$_Favorite extends _Favorite {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? random,
-    TResult? Function(String category)? category,
+    TResult? Function(String? category)? random,
     TResult? Function()? favorite,
   }) {
     return favorite?.call();
@@ -385,8 +261,7 @@ class _$_Favorite extends _Favorite {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? random,
-    TResult Function(String category)? category,
+    TResult Function(String? category)? random,
     TResult Function()? favorite,
     required TResult orElse(),
   }) {
@@ -400,7 +275,6 @@ class _$_Favorite extends _Favorite {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Random value) random,
-    required TResult Function(_Category value) category,
     required TResult Function(_Favorite value) favorite,
   }) {
     return favorite(this);
@@ -410,7 +284,6 @@ class _$_Favorite extends _Favorite {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Random value)? random,
-    TResult? Function(_Category value)? category,
     TResult? Function(_Favorite value)? favorite,
   }) {
     return favorite?.call(this);
@@ -420,7 +293,6 @@ class _$_Favorite extends _Favorite {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Random value)? random,
-    TResult Function(_Category value)? category,
     TResult Function(_Favorite value)? favorite,
     required TResult orElse(),
   }) {
@@ -431,7 +303,6 @@ class _$_Favorite extends _Favorite {
   }
 }
 
-abstract class _Favorite extends JokeState {
+abstract class _Favorite implements JokeState {
   const factory _Favorite() = _$_Favorite;
-  const _Favorite._() : super._();
 }
