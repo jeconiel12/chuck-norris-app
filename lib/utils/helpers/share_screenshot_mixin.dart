@@ -13,11 +13,19 @@ mixin ShareScreenshot {
     const fileName = 'screenshot.png';
     final directory = (await getApplicationDocumentsDirectory()).path;
     final file = await File('$directory/$fileName').create();
-    final capturedWidget =
-        await _screenshotController.captureFromWidget(widget);
-    file.writeAsBytesSync(capturedWidget);
-    // ignore: deprecated_member_use
-    await Share.shareFiles([file.path]);
-    await file.delete();
+    try {
+      final capturedWidget =
+          await _screenshotController.captureFromWidget(widget);
+      await file.writeAsBytes(capturedWidget);
+      await SharePlus.instance.share(
+        ShareParams(
+          files: [XFile(file.path)],
+        ),
+      );
+    } finally {
+      if (file.existsSync()) {
+        file.deleteSync();
+      }
+    }
   }
 }

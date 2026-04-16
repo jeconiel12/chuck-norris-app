@@ -10,7 +10,7 @@ abstract class ThemeColor {
     pink,
     purple,
     brown,
-    grey
+    grey,
   ];
 
   static const Color text = Color(0xFF2D2D2D);

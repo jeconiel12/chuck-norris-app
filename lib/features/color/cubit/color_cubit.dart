@@ -31,7 +31,7 @@ class ColorCubit extends Cubit<ColorState> {
   }
 
   Future<void> setColor(Color color) async {
-    await colorRepository.saveColorCode(color.value);
+    await colorRepository.saveColorCode(color.toARGB32());
     emit(state.copyWith(color: color));
   }
 }

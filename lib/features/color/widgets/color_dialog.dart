@@ -47,14 +47,14 @@ class ColorDialog extends StatelessWidget {
             const SizedBox(height: 12),
             Align(
               alignment: Alignment.bottomRight,
-              child: TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text(
-                  'CLOSE',
-                  style: ThemeText.button.copyWith(color: ThemeColor.text60),
+                child: TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(
+                    'CLOSE',
+                    style: ThemeText.button.copyWith(color: ThemeColor.text60),
+                  ),
                 ),
-              ),
-            )
+            ),
           ],
         ),
       ),

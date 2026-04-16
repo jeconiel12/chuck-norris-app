@@ -19,8 +19,7 @@ class FavoriteCubit extends Cubit<FavoriteState> {
   final JokeRepository jokeRepository;
 
   Future<void> checkIfJokeFavorite(String jokeId) async {
-    final result = await jokeRepository.checkIfJokeFavorite(jokeId);
-    result.fold(
+    jokeRepository.checkIfJokeFavorite(jokeId).fold(
       (_) => emit(state.copyWith(isError: true, isJokeFavorite: false)),
       (isJokeFavorite) => emit(
         state.copyWith(isError: false, isJokeFavorite: isJokeFavorite),
