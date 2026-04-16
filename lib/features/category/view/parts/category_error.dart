@@ -23,7 +23,7 @@ class CategoryError extends StatelessWidget {
               'TRY AGAIN',
               style: ThemeText.button,
             ),
-          )
+          ),
         ],
       ),
     );

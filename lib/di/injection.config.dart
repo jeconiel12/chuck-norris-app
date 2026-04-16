@@ -67,7 +67,7 @@ extension GetItInjectableX on _i1.GetIt {
     gh.lazySingleton<_i9.JokeLocalStorage>(
         () => _i9.JokeLocalStorage(jokeBox: gh<_i3.Box<_i4.Joke>>()));
     gh.singleton<_i10.ChuckNorrisApiClient>(
-        _i10.ChuckNorrisApiClient(httpClient: gh<_i5.Client>()));
+        () => _i10.ChuckNorrisApiClient(httpClient: gh<_i5.Client>()));
     gh.factory<_i11.ColorCubit>(
         () => _i11.ColorCubit(colorRepository: gh<_i12.ColorRepository>()));
     gh.lazySingleton<_i13.JokeRepository>(() => _i13.JokeRepository(

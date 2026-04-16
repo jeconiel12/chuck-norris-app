@@ -7,7 +7,7 @@ import 'package:mocktail/mocktail.dart';
 
 import 'package:chuck_norris_joke/data/chuck_norris_api/chuck_norris_api.dart';
 
-class MockHttpClient extends Mock with http.Client {}
+class MockHttpClient extends Mock implements http.Client {}
 
 void main() {
   group('ChuckNorrisApiClient', () {

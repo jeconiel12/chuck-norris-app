@@ -41,9 +41,9 @@ class CategoryCard extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             blurRadius: 8,
-            color: Colors.black.withOpacity(0.2),
+            color: Colors.black.withValues(alpha: 0.2),
             offset: const Offset(0, 2),
-          )
+          ),
         ],
       ),
       child: Material(
@@ -56,9 +56,10 @@ class CategoryCard extends StatelessWidget {
               SvgPicture.asset('assets/icons/$category.svg'),
               const SizedBox(height: 10),
               Text(
-                '${category.substring(0, 1).toUpperCase()}${category.substring(1)}', // ignore: lines_longer_than_80_chars
+                '${category.substring(0, 1).toUpperCase()}'
+                '${category.substring(1)}',
                 style: ThemeText.body1,
-              )
+              ),
             ],
           ),
         ),

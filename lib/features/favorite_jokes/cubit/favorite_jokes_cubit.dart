@@ -18,8 +18,7 @@ class FavoriteJokesCubit extends Cubit<FavoriteJokesState> {
   final JokeRepository jokeRepository;
 
   Future<void> getFavoriteJokes() async {
-    final response = await jokeRepository.getFavoriteJokes();
-    response.fold(
+    jokeRepository.getFavoriteJokes().fold(
       (failure) => emit(
         state.copyWith(
           failureOption: some(failure),
